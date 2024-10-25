@@ -5,7 +5,7 @@ import Comment from './comment'
 export default function FullTask(){
     return (
         <div className='flex justify-between flex-col  h-full '>
-            <header className='flex justify-between items-center h-8 px-5 py-4'>
+            <header className='flex justify-between items-center h-8 px-5 py-6 '>
                 <p>Имя таска</p>
                 <div className='flex'>
                     <Link
@@ -22,7 +22,7 @@ export default function FullTask(){
                 <p>lorem*1023</p>
                 <p>Фамилия И.О. </p>
             </main>
-            <footer className='flex bg-DarkContrastBGRD rounded-b-2xl'>
+            <footer className='flex flex-wrap overflow-y-auto bg-DarkTextboxBGRD rounded-b-2xl h-full'>
                 <Comment />
                 <Comment />
                 <Comment />
