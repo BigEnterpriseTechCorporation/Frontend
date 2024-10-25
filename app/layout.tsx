@@ -65,7 +65,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${sfPro.className} bg-DarkConrtastBGRD text-DarkTextStyle`}>{children}</body>
+			<body className={`${sfPro.className} bg-DarkContrastBGRD text-DarkTextStyle`}>{children}</body>
 		</html>
 	)
 }
