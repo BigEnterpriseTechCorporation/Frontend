@@ -1,6 +1,30 @@
+"use client"
 import Link from "next/link";
+import { FormEvent } from "react";
 
 export default function Registration(){
+
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+  	event.preventDefault()
+  	try {
+  		const formData = new FormData(event.currentTarget)
+  		const response = await fetch(`http://100.126.9.5/api/Account/register`, {
+  			method: 'POST',
+  			headers: {
+  				'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
+  			},
+  			body: `login=${formData.get('login')}&password=${formData.get('password')}`,
+  		})
+
+  		// Handle response if necessary
+  		const data = await response.json()
+  		console.log(data)
+  	} catch (error) {
+  		// Handle error if necessary
+  		console.error(error)
+  	}
+  }
+
   return (
 		<main className="flex justify-center items-center h-screen">
 			<form className="text-center w-72.25">
