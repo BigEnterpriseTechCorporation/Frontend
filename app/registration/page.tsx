@@ -1,33 +1,37 @@
-"use client"
-import Link from "next/link";
-import { FormEvent } from "react";
+'use client'
+import { error } from 'console'
+import Link from 'next/link'
+import { FormEvent } from 'react'
 
-export default function Registration(){
+export default function Registration() {
+	async function onSubmit(event: FormEvent<HTMLFormElement>) {
 
-  async function onSubmit(event: FormEvent<HTMLFormElement>) {
-  	event.preventDefault()
-  	try {
-  		const formData = new FormData(event.currentTarget)
-  		const response = await fetch(`http://100.126.9.5/api/Account/register`, {
-  			method: 'POST',
-  			headers: {
-  				'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-  			},
-  			body: `login=${formData.get('login')}&password=${formData.get('password')}`,
-  		})
+		event.preventDefault()
+		try {
+			const formData = new FormData(event.currentTarget)
 
-  		// Handle response if necessary
-  		const data = await response.json()
-  		console.log(data)
-  	} catch (error) {
-  		// Handle error if necessary
-  		console.error(error)
-  	}
-  }
+			const login = formData.get('login')
+			const name = formData.get('username')
+			const password = formData.get('passwordFirst')
+			const passwordSecond = formData.get('passwordSecond')
 
-  return (
+			const response = await fetch(`http://100.126.9.5/api/Account/register`, {
+				method: 'POST',
+				body: JSON.stringify({login,password,name}),
+			})
+
+			// Handle response if necessary
+			const data = await response.json()
+			console.log(data)
+		} catch (error) {
+			// Handle error if necessary
+			console.error(error)
+		}
+	}
+
+	return (
 		<main className="flex justify-center items-center h-screen">
-			<form className="text-center w-72.25">
+			<form className="text-center w-72.25" onSubmit={onSubmit}>
 				<div
 					role="group"
 					className="rounded-t-2.5xl px-4.5 pt-4.5 bg-DarkBGRD pb-3">
@@ -37,6 +41,7 @@ export default function Registration(){
 						<input
 							className="w-full bg-DarkConrtastBGRD rounded-xs h-7 px-2"
 							type="text"
+							name="username"
 						/>
 					</label>
 					<label className="text-start mb-1">
@@ -44,6 +49,7 @@ export default function Registration(){
 						<input
 							className="w-full bg-DarkConrtastBGRD rounded-xs h-7 px-2"
 							type="text"
+							name="login"
 						/>
 					</label>
 					<label className="text-start">
@@ -51,6 +57,7 @@ export default function Registration(){
 						<input
 							className="w-full bg-DarkConrtastBGRD rounded-xs h-7 px-2"
 							type="password"
+							name="passwordFirst"
 						/>
 					</label>
 					<label className="text-start">
@@ -58,6 +65,7 @@ export default function Registration(){
 						<input
 							className="w-full bg-DarkConrtastBGRD rounded-xs h-7 px-2"
 							type="password"
+							name="passwordSecond"
 						/>
 					</label>
 					<h3 className="text-xs pt-2 text-DarkTextMissStyle">
