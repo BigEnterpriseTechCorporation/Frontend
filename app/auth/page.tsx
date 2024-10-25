@@ -1,4 +1,5 @@
 'use client'
+import Input from '@/components/ui/input'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FormEvent } from 'react'
@@ -8,13 +9,16 @@ export default function Auth() {
 		event.preventDefault()
 		try {
 			const formData = new FormData(event.currentTarget)
+			const login = formData.get('login')
+			const password = formData.get('password')
 			const response = await fetch(`http://100.126.9.5/api/Account/token`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json; charset=utf-8',
 				},
-				body: `{"login":"${formData.get('login')}","password":"${formData.get('password')}"}`,
+				body: JSON.stringify({login,password}),
 			})
+			//`{"login":"${formData.get('login')}","password":"${formData.get('password')}"}`
 
 			// Handle response if necessary
 			const data = await response.json()
@@ -39,8 +43,8 @@ export default function Auth() {
 						className="text-start mb-1"
 						htmlFor="login">
 						<h2 className="text-DarkTextMissStyle text-sm ml-1 pt-2">Логин</h2>
-						<input
-							className="w-full bg-DarkConrtastBGRD rounded-xs h-7 px-2"
+						<Input
+							className="w-full"
 							type="text"
 							name="login"
 						/>
@@ -49,8 +53,8 @@ export default function Auth() {
 						className="text-start"
 						htmlFor="password">
 						<h2 className="text-DarkTextMissStyle text-sm ml-1 pt-1">Пароль</h2>
-						<input
-							className="w-full bg-DarkConrtastBGRD rounded-xs h-7 px-2"
+						<Input
+							className="w-full"
 							type="password"
 							name="password"
 						/>

@@ -3,6 +3,7 @@ import { error } from 'console'
 import Link from 'next/link'
 import { FormEvent } from 'react'
 import PasswordValidator from 'password-validator'
+import Input from '@/components/ui/input'
 
 export default function Registration() {
 	async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -62,32 +63,32 @@ export default function Registration() {
 					<h1 className="text-lg font-semibold">Создать учётную запись</h1>
 					<label className="text-start mb-1">
 						<h2 className="text-DarkTextMissStyle text-sm ml-1 pt-2">ФИО</h2>
-						<input
-							className="w-full bg-DarkConrtastBGRD rounded-xs h-7 px-2"
+						<Input
+							className="w-full"
 							type="text"
 							name="username"
 						/>
 					</label>
 					<label className="text-start mb-1">
 						<h2 className="text-DarkTextMissStyle text-sm ml-1 pt-2">Логин</h2>
-						<input
-							className="w-full bg-DarkConrtastBGRD rounded-xs h-7 px-2"
+						<Input
+							className="w-full"
 							type="text"
 							name="login"
 						/>
 					</label>
 					<label className="text-start">
 						<h2 className="text-DarkTextMissStyle text-sm ml-1 pt-1">Пароль</h2>
-						<input
-							className="w-full bg-DarkConrtastBGRD rounded-xs h-7 px-2"
+						<Input
+							className="w-full"
 							type="password"
 							name="passwordFirst"
 						/>
 					</label>
 					<label className="text-start">
 						<h2 className="text-DarkTextMissStyle text-sm ml-1 pt-1">Повторить пароль</h2>
-						<input
-							className="w-full bg-DarkConrtastBGRD rounded-xs h-7 px-2"
+						<Input
+							className="w-full"
 							type="password"
 							name="passwordSecond"
 						/>
