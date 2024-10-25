@@ -2,7 +2,7 @@ import Navigation from "@/components/layout/navigation";
 import Task from "@/components/ui/task";
 import TaskGroup from "@/components/ui/taskGroup";
 import { ListFilter, Search, UserRound } from "lucide-react";
-import FullStack from "@/components/ui/fulltask";
+import FullTask from "@/components/ui/fulltask";
 
 export default function Home() {
 	const TaskGroups = [
@@ -92,8 +92,8 @@ export default function Home() {
 		<div className="flex justify-center items-center h-screen px-6 py-7">
 			<section className="bg-DarkBGRD w-full h-full flex flex-col items-center px-11 py-8">
 				<Navigation/>
-				<main>
-					
+				<main className='w-4/5 min-h-1/2 rounded-2xl bg-DarkTextboxExampleText  min-h-max'>
+					<FullTask/>
 				</main>
 			</section>
 		</div>
