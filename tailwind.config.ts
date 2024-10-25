@@ -9,6 +9,8 @@ const config: Config = {
 				DarkContrastBGRD: 'rgb(37, 37, 37)',
 				DarkBGRD: 'rgba(50,50,50,1)',
 				DarkTextboxBGRD: 'rgb(40, 40, 40)',
+				BacklLable: 'rgb(61, 61, 61)',
+				DarkTextboxExampleText: 'rgba(73, 73, 75, 1)',
 
 				//? text colors
 				DarkTextMissStyle: 'rgb(192, 192, 192)',
@@ -19,6 +21,7 @@ const config: Config = {
 			},
 			padding: {
 				'4.5': '1.125rem',
+				'3.5': '0.875rem',
 			},
 			borderRadius: {
 				xs: '0.5px',
