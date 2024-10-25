@@ -2,6 +2,7 @@
 import { error } from 'console'
 import Link from 'next/link'
 import { FormEvent } from 'react'
+import PasswordValidator from 'password-validator'
 
 export default function Registration() {
 	async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -9,15 +10,38 @@ export default function Registration() {
 		event.preventDefault()
 		try {
 			const formData = new FormData(event.currentTarget)
+			const schema = new PasswordValidator()
+
+			schema
+				.is()
+				.min(8) // Minimum length 8
+				.is()
+				.max(20) // Maximum length 20
+				.has()
+				.uppercase() // Must have uppercase letters
+				.has()
+				.lowercase() // Must have lowercase letters
+				.has()
+				.digits(1) // Must have at least 2 digits
+				.has()
+				.not()
+				.spaces() 
 
 			const login = formData.get('login')
 			const name = formData.get('username')
 			const password = formData.get('passwordFirst')
 			const passwordSecond = formData.get('passwordSecond')
 
+			if(!schema.validate(password!.toString())){
+				console.error(false)
+			}
+
 			const response = await fetch(`http://100.126.9.5/api/Account/register`, {
 				method: 'POST',
-				body: JSON.stringify({login,password,name}),
+				headers: {
+					'Content-Type': 'application/json; charset=utf-8',
+				},
+				body: JSON.stringify({ login, password, name }),
 			})
 
 			// Handle response if necessary

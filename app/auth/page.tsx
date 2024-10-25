@@ -13,8 +13,7 @@ export default function Auth() {
 				headers: {
 					'Content-Type': 'application/json; charset=utf-8',
 				},
-				body: `{"login":${formData.get('login')},"password":${formData.get('password')}}`,
-				//body: `{"login":"admin","password":"admin"}`,
+				body: `{"login":"${formData.get('login')}","password":"${formData.get('password')}"}`,
 			})
 
 			// Handle response if necessary
