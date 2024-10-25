@@ -11,7 +11,7 @@ export default function Navigation(){
   }
 
   return (
-		<nav className="bg-DarkTextboxBGRD w-1/2 py-3 px-4.5 flex justify-between items-center rounded-full">
+		<nav className="bg-DarkTextboxBGRD w-1/2 py-3 px-4.5 flex justify-between items-center justify-self-center rounded-full">
 			<div
 				role="group"
 				className="flex gap-2">
