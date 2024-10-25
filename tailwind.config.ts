@@ -8,6 +8,7 @@ const config: Config = {
 				//? bg colors
 				DarkConrtastBGRD: 'rgb(37, 37, 37)',
 				DarkBGRD: 'rgba(60, 60, 67, 0.29)',
+        DarkTextboxBGRD : "rgb(40, 40, 40)",
 
 				//? text colors
 				DarkTextMissStyle: 'rgb(192, 192, 192)',
