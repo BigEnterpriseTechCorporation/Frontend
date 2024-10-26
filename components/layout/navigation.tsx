@@ -3,6 +3,7 @@ import Input from '../ui/input'
 import { cn } from '@/utils/css'
 import Link from 'next/link'
 
+
 export default function Navigation() {
 	return (
 		<nav
