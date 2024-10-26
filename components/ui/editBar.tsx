@@ -24,7 +24,11 @@ export default function EditBar() {
         },
       }
     return (
-        <ReactQuill modules={modules} theme="snow" className="bg-DarkTextboxBGRD h-full grid grid-rows-[max-content_auto]"/>
-    );
+			<ReactQuill
+				modules={modules}
+				theme="snow"
+				className="bg-DT_TextboxCont h-full grid grid-rows-[max-content_auto]"
+			/>
+		)
 }
 
