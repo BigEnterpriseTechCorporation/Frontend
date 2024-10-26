@@ -9,6 +9,7 @@ const config: Config = {
 				DarkContrastBGRD: 'rgb(37, 37, 37)',
 				DarkBGRD: 'rgba(50,50,50,1)',
 				DarkTextboxBGRD: 'rgb(40, 40, 40)',
+				DarkTextboxBG:"rgba(29, 29, 29, 1)",
 				BacklLable: 'rgb(61, 61, 61)',
 				DarkTextboxExampleText: 'rgba(73, 73, 75, 1)',
 

@@ -10,7 +10,7 @@ interface TaskProps extends ComponentPropsWithoutRef<'section'> {
 export default function Task({ title, description, assignee, ...props }: TaskProps) {
   function createShortDescription(){
     return description
-			.slice(0, 200)
+			.slice(0, 150)
 			.match(/[^\.!\?]+[\.!\?]+/g)
 			?.map(sentence => sentence)
   }
