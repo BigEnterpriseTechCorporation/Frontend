@@ -33,8 +33,8 @@ export default function Registration() {
 			const password = formData.get('passwordFirst')
 			const passwordSecond = formData.get('passwordSecond')
 
-			if(!schema.validate(password!.toString())){
-				console.error(false)
+			if (!schema.validate(password!.toString()) || password !== passwordSecond) {
+				throw new Error("Invalid password")
 			}
 
 			const response = await fetch(`http://100.126.9.5/api/Account/register`, {
@@ -47,6 +47,7 @@ export default function Registration() {
 
 			// Handle response if necessary
 			const data = await response.json()
+			localStorage.setItem("token",data.token)
 			console.log(data)
 		} catch (error) {
 			// Handle error if necessary

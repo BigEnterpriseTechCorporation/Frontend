@@ -11,7 +11,7 @@ export default function Auth() {
 			const formData = new FormData(event.currentTarget)
 			const login = formData.get('login')
 			const password = formData.get('password')
-			const response = await fetch(`http://100.126.9.5/api/Account/token`, {
+			const response = await fetch(`http://100.126.9.5/api/Account/login`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json; charset=utf-8',
