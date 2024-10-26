@@ -28,9 +28,9 @@ export default function Home() {
 	return (
 		<Provider store={store}>
 			<div className="flex justify-center items-center h-min-screen sm:px-6 sm:py-7">
-				<section className="bg-DT_WTBack w-full h-full sm:px-11 py-8 sm:rounded-3xl">
+				<section className="bg-DT_WTBack w-full h-full sm:px-11 px-4 py-8 sm:rounded-3xl">
 					<Navigation />
-					<h1 className="font-bold text-5xl text-center py-6">Разработка</h1>
+					<h1 className="font-bold sm:text-5xl text-4xl text-center py-6">Разработка</h1>
 					<main
 						className="w-full grid gap-8 lg:grid-cols-3"
 						style={{gridTemplateRows:`repeat(${Math.ceil(taskGroups.length/3)},minmax(0,1fr))`}}
