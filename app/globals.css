@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
 textarea:focus,
 input:focus {
 	outline: none;
@@ -56,4 +59,17 @@ input[data-autocompleted] {
 
 .ql-toolbar {
     border: 0 !important;
+}
+
+@media screen and (min-width: 320px) {
+    /* .ql-toolbar {
+        display: none;
+    } */
+    @import url('~lucide-static/font/Lucide.css');
+    /* .ql-toolbar::before {
+        
+        content: '';
+        display: block !important;
+        position: absolute !important;
+    } */
 }

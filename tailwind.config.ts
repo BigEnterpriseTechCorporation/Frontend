@@ -4,6 +4,9 @@ const config: Config = {
 	content: ['./pages/**/*.{js,ts,jsx,tsx,mdx}', './components/**/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
 	theme: {
 		extend: {
+			screens: {
+				'2sm': '320px',
+			},
 			colors: {
 				//? bg colors
 				DT_DeepBckgr: 'rgba(31, 31, 31, 1)',
