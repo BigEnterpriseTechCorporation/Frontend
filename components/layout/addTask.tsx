@@ -56,7 +56,7 @@ export default function AddTask() {
 
 	return (
 		<AsideContainer
-			rootClassName={!isAddTaskOpened ? 'hidden' : ''}
+			rootClassName={!isAddTaskOpened ? 'hidden' : 'flex justify-center items-center'}
 			rootOnClick={() => {
 				dispatch(toggleAddTasks())
 				setTitle('')

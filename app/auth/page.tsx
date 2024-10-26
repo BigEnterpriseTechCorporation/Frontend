@@ -1,7 +1,8 @@
 'use client'
 import Input from '@/components/ui/input'
+import Label from '@/components/ui/label'
+import { cn } from '@/utils/css'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import { FormEvent } from 'react'
 
 export default function Auth() {
@@ -16,7 +17,7 @@ export default function Auth() {
 				headers: {
 					'Content-Type': 'application/json; charset=utf-8',
 				},
-				body: JSON.stringify({login,password}),
+				body: JSON.stringify({ login, password }),
 			})
 			//`{"login":"${formData.get('login')}","password":"${formData.get('password')}"}`
 
@@ -30,36 +31,26 @@ export default function Auth() {
 	}
 
 	return (
-		<main className="flex justify-center items-center h-screen">
+		<main className={cn('flex justify-center items-center', 'h-screen')}>
 			<form
-				className="text-center w-72.25"
+				className={cn('text-center', 'w-72.25')}
 				onSubmit={onSubmit}>
 				<div
 					role="group"
-					className="rounded-t-2.5xl px-4.5 pt-4.5 bg-DT_TextboxEText pb-3">
+					className={cn('rounded-t-2.5xl', 'px-4.5 pt-4.5 pb-3', 'bg-DT_TextboxEText')}>
 					<h1 className="text-lg font-semibold">С возвращением!</h1>
 					<h2 className="text-sm">Мы так рады видеть вас снова!</h2>
-					<label
-						className="text-start mb-1"
-						htmlFor="login">
-						<h2 className="text-DT_Login text-sm ml-1 pt-2">Логин</h2>
-						<Input
-							className="w-full"
-							type="text"
-							name="login"
-						/>
-					</label>
-					<label
-						className="text-start"
-						htmlFor="password">
-						<h2 className="text-DT_Login text-sm ml-1 pt-1">Пароль</h2>
-						<Input
-							className="w-full"
-							type="password"
-							name="password"
-						/>
-					</label>
-					<h3 className="text-xs pt-2 text-DT_Login">
+					<Label
+						name="login"
+						type="text"
+						placeholder="Логин"
+					/>
+					<Label
+						name="password"
+						type="password"
+						placeholder="Пароль"
+					/>
+					<h3 className={cn('text-xs text-DT_Login', 'pt-2')}>
 						Нужна учётная запись?{' '}
 						<Link
 							href={'/'}
@@ -71,7 +62,7 @@ export default function Auth() {
 
 				<button
 					type="submit"
-					className="bg-[rgb(45,_45,_45)] w-full text-Blue rounded-b-2.5xl py-2">
+					className={cn('bg-[rgb(45,_45,_45)] text-Blue', 'rounded-b-2.5xl', 'w-full py-2')}>
 					Вход
 				</button>
 			</form>
