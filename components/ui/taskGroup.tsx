@@ -1,36 +1,37 @@
 'use client'
-
-import { groupTask } from '@/app/page'
-import tasks from '@/data/tasks.json'
-import { cn } from '@/utils/css'
 import { CirclePlus } from 'lucide-react'
-import { ComponentPropsWithoutRef } from 'react'
-import Task from "@/components/ui/task"
-import { useAppDispatch } from '@/lib/redux/hooks'
+import { ComponentPropsWithoutRef, useState } from 'react'
+import AsideContainer from './asideContainer'
+import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks'
 import { toggleAddTasks } from '@/lib/redux/slices/addTaskSlice'
+import AddTask from '../layout/addTask'
 
-interface TaskGroupProps extends ComponentPropsWithoutRef<"div">, groupTask{}
+interface TaskGroupProps extends ComponentPropsWithoutRef<'section'> {
+	name: string
+	tasks: React.ReactNode[]
+}
 
-export default function TaskGroup({groupId,name,tasksIds,...props}:TaskGroupProps) {
+export default function TaskGroup({ name, tasks, ...props }: TaskGroupProps) {
 	const dispatch = useAppDispatch()
+	const isAddTaskOpened = useAppSelector(state => state.addTasks.isMenuOpened)
 
 	return (
-		<div
-			className={cn('bg-DT_TextboxEText',"rounded-2xl")}
-			{...props}>
-			<div className={cn('flex justify-between', 'bg-DT_BacklLable', "rounded-t-2xl", "py-3 px-4.5")}>
-				<h3 className='text-2xl'>{name}</h3>
-				<button onClick={()=>dispatch(toggleAddTasks())}>
+		<section className={'bg-DarkTextboxExampleText h-full justify-self-stretch rounded-2xl'} {...props}>
+			<div
+				role="group"
+				className="flex justify-between items-center px-4.5 py-3 bg-BacklLable rounded-t-2xl">
+				<h2 className="text-2xl">{name}</h2>
+				<button onClick={() => dispatch(toggleAddTasks())}>
 					<CirclePlus />
 				</button>
 			</div>
-			<div className={cn("px-4.5 py-3","flex flex-col gap-3")}>
-				{tasksIds.map(taskId => {
-				const task = tasks[taskId - 1]
-				return <Task key={`task_${taskId}`} taskId={taskId} title={task.title} description={task.description} assignee={task.assignee}/>
-			})}
-			</div>
-			
-		</div>
+			<ul className="px-3.5 flex flex-col gap-3 pt-3">
+				{tasks &&
+					tasks.map((task, index) => {
+						return <li key={name + '_task_' + index}>{task}</li>
+					})}
+			</ul>
+			<AddTask/>
+		</section>
 	)
 }
