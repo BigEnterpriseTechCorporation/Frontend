@@ -9,7 +9,7 @@ export default function Navigation() {
 		<nav
 			className={cn(
 				'bg-DT_TextboxCont',
-				'w-1/2 h-10',
+				'lg:w-1/2 w-full h-10',
 				'py-3 px-4.5',
 				'grid grid-cols-[max-content_max-content_auto_max-content] items-center content-center gap-2',
 				'justify-self-center',
@@ -24,7 +24,7 @@ export default function Navigation() {
 				<button className={cn('bg-DT_SearchBar', 'h-full', 'rounded-l-md')}>
 					<Search className="p-1" />
 				</button>
-				<Input className={cn('bg-DT_SearchBar', 'rounded-r-md', 'pl-0')} />
+				<Input className={cn('bg-DT_SearchBar', '!rounded-l-none', 'pl-0')} />
 			</label>
 			<ListFilter height={14} />
 		</nav>

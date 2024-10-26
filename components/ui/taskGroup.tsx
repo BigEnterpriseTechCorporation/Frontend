@@ -18,10 +18,10 @@ export default function TaskGroup({groupId,name,tasksIds,...props}:TaskGroupProp
 		<div
 			className={cn('bg-DT_TextboxEText',"rounded-2xl")}
 			{...props}>
-			<div className={cn('flex justify-between', 'bg-DT_BacklLable', "rounded-t-2xl", "py-3 px-4.5")}>
+			<div className={cn('flex justify-between items-center', 'bg-DT_BacklLable', "rounded-t-2xl", "py-3 px-4.5")}>
 				<h3 className='text-2xl'>{name}</h3>
-				<button onClick={()=>dispatch(toggleAddTasks())}>
-					<CirclePlus />
+				<button onClick={()=>dispatch(toggleAddTasks())} className='h-1/2'>
+					<CirclePlus className='h-full'/>
 				</button>
 			</div>
 			<div className={cn("px-4.5 py-3","flex flex-col gap-3")}>

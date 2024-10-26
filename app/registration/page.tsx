@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { FormEvent } from 'react'
 import PasswordValidator from 'password-validator'
 import Input from '@/components/ui/input'
+import { cn } from '@/utils/css'
 
 export default function Registration() {
 	async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -55,13 +56,13 @@ export default function Registration() {
 	}
 
 	return (
-		<main className="flex justify-center items-center h-screen">
+		<main className={cn('flex justify-center items-center', 'px-4', 'h-screen')}>
 			<form
 				className="text-center w-72.25"
 				onSubmit={onSubmit}>
 				<div
 					role="group"
-					className="rounded-t-2.5xl px-4.5 pt-4.5 bg-DarkBGRD pb-3">
+					className="rounded-t-2.5xl px-4.5 pt-4.5 bg-DT_TextboxEText pb-3">
 					<h1 className="text-lg font-semibold">Создать учётную запись</h1>
 					<label className="text-start mb-1">
 						<h2 className="text-DarkTextMissStyle text-sm ml-1 pt-2">ФИО</h2>
