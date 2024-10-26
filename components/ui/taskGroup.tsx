@@ -1,52 +1,32 @@
 'use client'
+
+import { groupTask } from '@/app/page'
+import tasks from '@/data/tasks.json'
+import { cn } from '@/utils/css'
 import { CirclePlus } from 'lucide-react'
-import { ComponentPropsWithoutRef, useState } from 'react'
-import AsideContainer from './asideContainer'
-import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks'
-import { toggleAddTasks } from '@/lib/redux/slices/addTaskSlice'
-import AddTask from '../layout/addTask'
-import allTasks from '@/data/tasks.json'
-import { task } from '@/app/page'
-import Task from './task'
-import { DndProvider } from 'react-dnd'
-import { chooseDragTaskId } from '@/lib/redux/slices/dragSlice'
+import { ComponentPropsWithoutRef } from 'react'
+import Task from "@/components/ui/task"
 
-interface TaskGroupProps extends ComponentPropsWithoutRef<'section'> {
-	groupId: number
-	name: string
-	tasks: task[]
-}
+interface TaskGroupProps extends ComponentPropsWithoutRef<"div">, groupTask{}
 
-export default function TaskGroup({ groupId, name, tasks, ...props }: TaskGroupProps) {
-	const [Tasks, setTasks] = useState(tasks)
-	const dispatch = useAppDispatch()
-
+export default function TaskGroup({groupId,name,tasksIds,...props}:TaskGroupProps) {
 	return (
-		<section
-			className={'bg-DT_TextboxEText self-stretch justify-self-stretch rounded-2xl pb-6'}
+		<div
+			className={cn('bg-DT_TextboxEText',"rounded-2xl")}
 			{...props}>
-			<div
-				role="group"
-				className="flex justify-between items-center px-4.5 py-3 bg-DT_BacklLable rounded-t-2xl">
-				<h2 className="text-2xl">{name}</h2>
-				<button onClick={() => dispatch(toggleAddTasks())}>
+			<div className={cn('flex justify-between', 'bg-DT_BacklLable', "rounded-t-2xl", "py-3 px-4.5")}>
+				<h3 className='text-2xl'>{name}</h3>
+				<button>
 					<CirclePlus />
 				</button>
 			</div>
-			<ul className="px-3.5 flex flex-col gap-3 pt-3" onDragStart={()=>setTasks()}>
-				{Tasks.map((task, index) => {
-					return (
-						<Task
-							groupId={groupId}
-							taskId={task.id - 1}
-							title={task.title}
-							description={task.description}
-							assignee={task.assignee}
-							key={`task_${task.id}`}
-						/>
-					)
-				})}
-			</ul>
-		</section>
+			<div className={cn("px-4.5 py-3","flex flex-col gap-3")}>
+				{tasksIds.map(taskId => {
+				const task = tasks[taskId - 1]
+				return <Task key={`task_${taskId}`} taskId={taskId} title={task.title} description={task.description} assignee={task.assignee}/>
+			})}
+			</div>
+			
+		</div>
 	)
 }

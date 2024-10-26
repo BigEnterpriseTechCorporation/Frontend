@@ -12,47 +12,36 @@ import { Reorder } from 'framer-motion'
 import { useState } from 'react'
 
 export interface task {
-	id: number
+	taskId: number
 	title: string
 	description: string
 	assignee: string
 }
 
-interface groupTask {
+export interface groupTask {
 	groupId: number
 	name: string
 	tasksIds: number[]
 }
 
 export default function Home() {
-	const TaskGroups = taskGroups.map(({ groupId, name, tasksIds }: groupTask) => {
-		return {
-			groupId,
-			name,
-			tasks: tasksIds.map(taskId => tasks[taskId - 1]),
-		}
-	})
-
 	return (
 		<Provider store={store}>
 			<div className="flex justify-center items-center h-min-screen px-6 py-7">
 				<section className="bg-DT_WTBack w-full h-full px-11 py-8 rounded-3xl">
 					<Navigation />
 					<h1 className="font-bold text-5xl text-center py-6">Разработка</h1>
-						<main
-							className="w-full grid gap-8"
-							style={{ gridTemplateColumns: `repeat(min(4,${TaskGroups.length}),minmax(0,1fr))` }}>
-							{TaskGroups.map(({ groupId, name, tasks }) => {
-								return (
-									<TaskGroup
-										groupId={groupId}
-										name={name}
-										key={`group_${groupId}`}
-										tasks={tasks}
-									/>
+					<main
+						className="w-full grid gap-8"
+						style={{ gridTemplateColumns: `repeat(3,minmax(0,1fr))` }}>
+						{
+							taskGroups.map(({groupId,name,tasksIds})=>{
+								return(
+									<TaskGroup key={`taskGroup_${groupId}`} groupId={groupId} name={name} tasksIds={tasksIds}/>
 								)
-							})}
-						</main>
+							})
+						}
+					</main>
 				</section>
 				<AddTask />
 				<FullTask />
