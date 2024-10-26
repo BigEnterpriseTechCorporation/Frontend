@@ -17,7 +17,7 @@ export default function FullTask() {
 	return (
 		<AsideContainer
 			rootClassName={!isFullTaskOpened ? '!hidden' : 'flex justify-center items-center'}
-			className={cn('!p-0', 'lg:!h-3/5 !w-4/5', 'grid grid-rows-2')}>
+			className={cn('!p-0', 'xl:!h-3/5 !w-4/5', 'grid grid-rows-2')}>
 			<main className={cn('pt-6 px-6 pb-3', 'grid grid-rows-[max-content_auto_fit-content]')}>
 				<div className="flex justify-between">
 					<h2 className="text-xl font-semibold">{taskData.title}</h2>
@@ -36,7 +36,7 @@ export default function FullTask() {
 			{
 				//? Comments
 			}
-			<section className={cn('px-6 py-3', 'overflow-scroll', 'bg-DT_WTBack', 'rounded-b-2xl', 'flex flex-col items-center gap-2')}>
+			<section className={cn('px-6 py-3', 'overflow-scroll sm:overflow-visible', 'bg-DT_WTBack', 'h-3/4', 'rounded-b-2xl', 'flex flex-col items-center gap-2')}>
 				<div className={cn('sm:grid sm:grid-cols-3 sm:justify-between sm:gap-6', ' w-full')}>
 					{taskData.comments.map(commentId => {
 						const commentData = comments[commentId - 1]
