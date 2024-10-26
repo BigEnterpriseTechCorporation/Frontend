@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks'
 import Input from '../ui/input'
 import { useEffect, useState } from 'react'
 import { Plus, X } from 'lucide-react'
+import EditBar from '@/components/ui/editBar'
 
 export default function AddTask() {
 	const dispatch = useAppDispatch()
@@ -69,12 +70,16 @@ export default function AddTask() {
 			<form className="grid grid-rows-[auto_max-content] h-full">
 				<div
 					role="group"
-					className="grid grid-rows-[max-content_auto_max-content] gap-2">
+					className="flex flex-col">
+					<label>Заголовок задачи</label>
 					<Input
+						className='min-h-4'
 						type="text"
 						name="title"
 						value={title}
-						onChange={e => setTitle(e.target.value)}
+						onChange={e => setTitle(e.target.value)
+						
+						}
 					/>
 					<label className="bg-DT_LPassBack grid grid-rows-[max-content_auto]">
 						<div
@@ -122,7 +127,6 @@ export default function AddTask() {
 							onChange={e => setDescription(e.target.value)}
 						/>
 					</label>
-
 					<div
 						role="group"
 						className="flex items-center gap-2">

@@ -33,3 +33,19 @@ input:focus {
 	background-size:auto;
   background-position: center
 }
+
+
+.ql-editor {
+    height: 100%;
+    word-break: break-all;
+    font-size: 16px;
+    line-height: 1.5;
+}
+.ql-container {
+    border: 0 !important;
+    height: auto !important;
+}
+
+.ql-toolbar {
+    border: 0 !important;
+}
