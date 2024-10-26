@@ -1,13 +1,12 @@
 'use client'
+import { error } from 'console'
 import Link from 'next/link'
 import { FormEvent } from 'react'
 import PasswordValidator from 'password-validator'
-import { cn } from "@/utils/css"
-import Label from '@/components/ui/label'
+import Input from '@/components/ui/input'
 
 export default function Registration() {
 	async function onSubmit(event: FormEvent<HTMLFormElement>) {
-
 		event.preventDefault()
 		try {
 			const formData = new FormData(event.currentTarget)
@@ -26,15 +25,15 @@ export default function Registration() {
 				.digits(1) // Must have at least 2 digits
 				.has()
 				.not()
-				.spaces() 
+				.spaces()
 
 			const login = formData.get('login')
 			const name = formData.get('username')
 			const password = formData.get('passwordFirst')
 			const passwordSecond = formData.get('passwordSecond')
 
-			if(!schema.validate(password!.toString())){
-				console.error(false)
+			if (!schema.validate(password!.toString()) || password !== passwordSecond) {
+				throw new Error('Invalid password')
 			}
 
 			const response = await fetch(`http://100.126.9.5/api/Account/register`, {
@@ -47,6 +46,7 @@ export default function Registration() {
 
 			// Handle response if necessary
 			const data = await response.json()
+			localStorage.setItem('token', data.token)
 			console.log(data)
 		} catch (error) {
 			// Handle error if necessary
@@ -55,37 +55,47 @@ export default function Registration() {
 	}
 
 	return (
-		<main className={cn('flex justify-center items-center', 'h-screen')}>
+		<main className="flex justify-center items-center h-screen">
 			<form
-				className={cn('text-center', 'w-72.25')}
+				className="text-center w-72.25"
 				onSubmit={onSubmit}>
 				<div
 					role="group"
-					className={cn('rounded-t-2.5xl', 'bg-DT_TextboxEText', 'pb-3 px-4.5 pt-4.5')}>
-					<h1 className={cn('text-lg', 'font-semibold')}>Создать учётную запись</h1>
-
-					<Label
-						type="text"
-						name="username"
-						placeholder="ФИО"
-					/>
-					<Label
-						type="text"
-						name="login"
-						placeholder="Логин"
-					/>
-					<Label
-						type="password"
-						name="password"
-						placeholder="Пароль"
-					/>
-					<Label
-						type="password"
-						name="passwordSecond"
-						placeholder="Повторить пароль"
-					/>
-
-					<h3 className="text-xs pt-2 text-DT_Login">
+					className="rounded-t-2.5xl px-4.5 pt-4.5 bg-DarkBGRD pb-3">
+					<h1 className="text-lg font-semibold">Создать учётную запись</h1>
+					<label className="text-start mb-1">
+						<h2 className="text-DarkTextMissStyle text-sm ml-1 pt-2">ФИО</h2>
+						<Input
+							className="w-full"
+							type="text"
+							name="username"
+						/>
+					</label>
+					<label className="text-start mb-1">
+						<h2 className="text-DarkTextMissStyle text-sm ml-1 pt-2">Логин</h2>
+						<Input
+							className="w-full"
+							type="text"
+							name="login"
+						/>
+					</label>
+					<label className="text-start">
+						<h2 className="text-DarkTextMissStyle text-sm ml-1 pt-1">Пароль</h2>
+						<Input
+							className="w-full"
+							type="password"
+							name="passwordFirst"
+						/>
+					</label>
+					<label className="text-start">
+						<h2 className="text-DarkTextMissStyle text-sm ml-1 pt-1">Повторить пароль</h2>
+						<Input
+							className="w-full"
+							type="password"
+							name="passwordSecond"
+						/>
+					</label>
+					<h3 className="text-xs pt-2 text-DarkTextMissStyle">
 						<Link
 							href={'/'}
 							className="text-Blue">

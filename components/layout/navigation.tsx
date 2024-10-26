@@ -1,6 +1,7 @@
 import { UserRound, ListFilter, Search, Upload } from 'lucide-react'
 import Input from '../ui/input'
 import { cn } from '@/utils/css'
+import Link from 'next/link'
 
 export default function Navigation() {
 	return (
@@ -13,7 +14,10 @@ export default function Navigation() {
 				'justify-self-center',
 				'rounded-full'
 			)}>
-			<UserRound height={14} />
+			<Link href={"/profile"}>
+				<UserRound height={14} />
+			</Link>
+			
 			<Upload height={14} />
 			<label className="grid grid-cols-[max-content_auto] items-stretch">
 				<button className={cn('bg-DT_SearchBar', 'h-full', 'rounded-l-md')}>
