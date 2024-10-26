@@ -6,16 +6,16 @@ const config: Config = {
 		extend: {
 			colors: {
 				//? bg colors
-				DT_DeepBckgr: 'rgba(31, 31, 31, 1)',
-				DT_WTBack: 'rgb(40, 42, 46)',
-				DT_Text: 'rgba(241, 241, 241, 1)',
-				DT_Backl: 'rgba(49, 51, 56, 1)',
-				DT_TextboxEText: 'rgba(57, 59, 65, 1)',
-				DT_LPassBack: 'rgba(37, 37, 37, 1)',
-				DT_TextboxCont: "rgba(35, 36, 40, 1)",
-				DT_Login: "rgba(192, 192, 192, 1)",
-				DT_BacklLable: "rgba(35, 36, 40, 1)",
-				DT_SearchBar: "rgba(29, 29, 29, 1)",
+				DarkContrastBGRD: 'rgb(37, 37, 37)',
+				DarkBGRD: 'rgba(50,50,50,1)',
+				DarkTextboxBGRD: 'rgb(40, 40, 40)',
+				DarkTextboxBG:"rgba(29, 29, 29, 1)",
+				BacklLable: 'rgb(61, 61, 61)',
+				DarkTextboxExampleText: 'rgba(73, 73, 75, 1)',
+
+				//? text colors
+				DarkTextMissStyle: 'rgb(192, 192, 192)',
+				DarkTextStyle: 'rgb(241, 241, 241)',
 
 				//? highlight color
 				Blue: 'rgb(0, 122, 255)',
@@ -37,9 +37,6 @@ const config: Config = {
 				'72.25': '18.0625rem',
 			},
 			height: {
-				'4.5': '1.125rem',
-			},
-			spacing: {
 				'4.5': '1.125rem',
 			},
 		},
