@@ -35,13 +35,13 @@ export default function Auth() {
 	}
 
 	return (
-		<main className={cn('flex justify-center items-center', 'h-screen')}>
+		<main className={cn('flex justify-center items-center','px-4', 'h-screen')}>
 			<form
-				className={cn('text-center', 'w-72.25')}
+				className={cn('text-center', 'w-96')}
 				onSubmit={onSubmit}>
 				<div
 					role="group"
-					className={cn('rounded-t-2.5xl', 'px-4.5 pt-4.5 pb-3', 'bg-DT_TextboxEText')}>
+					className={cn('rounded-t-2.5xl', 'px-5 pt-6 pb-3', 'bg-DT_TextboxEText')}>
 					<h1 className="text-lg font-semibold">С возвращением!</h1>
 					<h2 className="text-sm">Мы так рады видеть вас снова!</h2>
 					<Label
@@ -54,7 +54,7 @@ export default function Auth() {
 						type="password"
 						placeholder="Пароль"
 					/>
-					<h3 className={cn('text-xs text-DT_Login', 'pt-2')}>
+					<h3 className={cn('text-sm text-DT_Login', 'pt-2')}>
 						Нужна учётная запись?{' '}
 						<Link
 							href={'/'}
@@ -66,7 +66,7 @@ export default function Auth() {
 
 				<button
 					type="submit"
-					className={cn('bg-[rgb(45,_45,_45)] text-Blue', 'rounded-b-2.5xl', 'w-full py-2')}>
+					className={cn('bg-[rgb(45,_45,_45)] text-Blue text-lg', 'rounded-b-2.5xl', 'w-full py-2')}>
 					Вход
 				</button>
 			</form>
