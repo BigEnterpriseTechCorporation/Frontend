@@ -35,7 +35,7 @@ export default function AddTask() {
 		return (
 			<div
 				key={`assignee_${index}`}
-				className="flex items-center bg-DT_TextboxCont">
+				className="flex items-center bg-DT_TextboxCont rounded-md px-2 py-2">
 				<Input
 					placeholder="Фамилия И.О."
 					value={value}
@@ -72,7 +72,7 @@ export default function AddTask() {
 					role="group"
 					className="flex flex-col">
 					<Input
-						className="min-h-4"
+						className="min-h-4 2sm:h-12 2sm:mb-4 sm:h-16"
 						type="text"
 						name="title"
 						value={title}
