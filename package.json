@@ -15,14 +15,9 @@
     "password-validator": "^5.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-<<<<<<< HEAD
     "react-redux": "^9.1.2",
     "tailwind-merge": "^2.5.4",
     "react-quill-new": "^3.3.3"
-=======
-    "react-quill-new": "^3.3.3",
-    "react-redux": "^9.1.2"
->>>>>>> 9692e6e2973e8b474edc22e18d65a0277c46f02a
   },
   "devDependencies": {
     "@types/node": "^20",
