@@ -8,8 +8,8 @@ import Image from 'next/image'
 export default function Profile() {
 	const user = useUser()
 
-	return typeof user === 'string' ? (
-		user
+	return (typeof user === 'string' || localStorage.getItem("token") == undefined) ? (
+		<p>{user.toString()}</p>
 	) : (
 		<AsideContainer
 			rootClassName="flex items-center justify-center"
