@@ -17,7 +17,7 @@ export default function FullTask() {
 	return (
 		<AsideContainer
 			rootClassName={!isFullTaskOpened ? '!hidden' : 'flex justify-center items-center'}
-			className={cn('!p-0', '!h-3/5 !w-4/5', 'grid grid-rows-2')}>
+			className={cn('!p-0', 'lg:!h-3/5 !w-4/5', 'grid grid-rows-2')}>
 			<main className={cn('pt-6 px-6 pb-3', 'grid grid-rows-[max-content_auto_fit-content]')}>
 				<div className="flex justify-between">
 					<h2 className="text-xl font-semibold">{taskData.title}</h2>
@@ -36,12 +36,13 @@ export default function FullTask() {
 			{
 				//? Comments
 			}
-			<section className={cn('px-6 py-3', 'bg-DT_WTBack', 'rounded-b-2xl', 'flex flex-col items-center gap-2')}>
-				<div className={cn('grid grid-cols-3 justify-between gap-6', ' w-full')}>
+			<section className={cn('px-6 py-3', 'overflow-scroll', 'bg-DT_WTBack', 'rounded-b-2xl', 'flex flex-col items-center gap-2')}>
+				<div className={cn('sm:grid sm:grid-cols-3 sm:justify-between sm:gap-6', ' w-full')}>
 					{taskData.comments.map(commentId => {
 						const commentData = comments[commentId - 1]
 						return (
 							<Comment
+								
 								author={commentData.author}
 								text={commentData.text}
 								key={`comment_${commentId}`}
@@ -49,7 +50,7 @@ export default function FullTask() {
 						)
 					})}
 				</div>
-				<button className={cn('text-center text-Blue', 'bg-DT_TextboxCont', 'py-1 px-4.5', ' rounded-full')}>Добавить комментарий</button>
+				<button className={cn('text-center text-Blue', 'bg-DT_TextboxCont', 'py-1 px-4.5', 'mt-4', ' rounded-full')}>Добавить комментарий</button>
 			</section>
 		</AsideContainer>
 	)
