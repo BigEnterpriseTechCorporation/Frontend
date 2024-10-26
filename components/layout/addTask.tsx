@@ -58,15 +58,14 @@ export default function AddTask() {
 		<AsideContainer
 			rootClassName={!isAddTaskOpened ? 'hidden' : ''}
 			rootOnClick={() => {
-        dispatch(toggleAddTasks())
-        setTitle("")
-        setDescription("")
-        setAssigneesData([""])
-      }}
+				dispatch(toggleAddTasks())
+				setTitle('')
+				setDescription('')
+				setAssigneesData([''])
+			}}
 			onClick={e => {
 				if (e && e.stopPropagation) e.stopPropagation()
-			}}
-			className="w-3/5 h-1/2">
+			}}>
 			<form className="grid grid-rows-[auto_max-content] h-full">
 				<div
 					role="group"
@@ -77,7 +76,7 @@ export default function AddTask() {
 						value={title}
 						onChange={e => setTitle(e.target.value)}
 					/>
-					<label className="bg-DarkTextboxBGRD grid grid-rows-[max-content_auto]">
+					<label className="bg-DT_LPassBack grid grid-rows-[max-content_auto]">
 						<div
 							role="group"
 							className="flex justify-between items-center p-2">

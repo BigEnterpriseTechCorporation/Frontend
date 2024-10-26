@@ -11,22 +11,23 @@ export default function Navigation(){
   }
 
   return (
-		<nav className="bg-DarkTextboxBGRD w-1/2 py-3 px-4.5 flex justify-between items-center justify-self-center rounded-full">
+		<nav className="bg-DT_TextboxCont w-1/2 h-10
+		 py-3 px-4.5 flex justify-between items-center justify-self-center rounded-full">
 			<div
 				role="group"
-				className="flex gap-2">
-				<UserRound />
-				<Upload />
+				className="flex gap-2 items-center">
+				<UserRound height={14}/>
+				<Upload height={14}/>
 			</div>
 			<div
 				role="group"
-				className="flex gap-2">
+				className="flex gap-2 items-center">
 				<Input className={isSearchOpen ? 'w-80' : 'w-0 !p-0'} />
 
 				<button onClick={toggleSearch}>
-					<Search />
+					<Search height={14}/>
 				</button>
-				<ListFilter />
+				<ListFilter height={14}/>
 			</div>
 		</nav>
 	)

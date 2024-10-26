@@ -56,13 +56,15 @@ export default function Registration() {
 
 	return (
 		<main className="flex justify-center items-center h-screen">
-			<form className="text-center w-72.25" onSubmit={onSubmit}>
+			<form
+				className="text-center w-72.25"
+				onSubmit={onSubmit}>
 				<div
 					role="group"
-					className="rounded-t-2.5xl px-4.5 pt-4.5 bg-DarkBGRD pb-3">
+					className="rounded-t-2.5xl px-4.5 pt-4.5 bg-DT_TextboxEText pb-3">
 					<h1 className="text-lg font-semibold">Создать учётную запись</h1>
 					<label className="text-start mb-1">
-						<h2 className="text-DarkTextMissStyle text-sm ml-1 pt-2">ФИО</h2>
+						<h2 className="text-DT_Login text-sm ml-1 pt-2">ФИО</h2>
 						<Input
 							className="w-full"
 							type="text"
@@ -70,7 +72,7 @@ export default function Registration() {
 						/>
 					</label>
 					<label className="text-start mb-1">
-						<h2 className="text-DarkTextMissStyle text-sm ml-1 pt-2">Логин</h2>
+						<h2 className="text-DT_Login text-sm ml-1 pt-2">Логин</h2>
 						<Input
 							className="w-full"
 							type="text"
@@ -78,7 +80,7 @@ export default function Registration() {
 						/>
 					</label>
 					<label className="text-start">
-						<h2 className="text-DarkTextMissStyle text-sm ml-1 pt-1">Пароль</h2>
+						<h2 className="text-DT_Login text-sm ml-1 pt-1">Пароль</h2>
 						<Input
 							className="w-full"
 							type="password"
@@ -86,14 +88,14 @@ export default function Registration() {
 						/>
 					</label>
 					<label className="text-start">
-						<h2 className="text-DarkTextMissStyle text-sm ml-1 pt-1">Повторить пароль</h2>
+						<h2 className="text-DT_Login text-sm ml-1 pt-1">Повторить пароль</h2>
 						<Input
 							className="w-full"
 							type="password"
 							name="passwordSecond"
 						/>
 					</label>
-					<h3 className="text-xs pt-2 text-DarkTextMissStyle">
+					<h3 className="text-xs pt-2 text-DT_Login">
 						<Link
 							href={'/'}
 							className="text-Blue">
