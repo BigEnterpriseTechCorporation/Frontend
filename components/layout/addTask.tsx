@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks'
 import Input from '../ui/input'
 import { useEffect, useState } from 'react'
 import { Plus, X } from 'lucide-react'
+import EditBar from '@/components/ui/editBar'
 
 export default function AddTask() {
 	const dispatch = useAppDispatch()
@@ -70,60 +71,19 @@ export default function AddTask() {
 			<form className="grid grid-rows-[auto_max-content] h-full">
 				<div
 					role="group"
-					className="grid grid-rows-[max-content_auto_max-content] gap-2">
+					className="flex flex-col">
+					<label>Заголовок задачи</label>
 					<Input
+						className='min-h-4'
 						type="text"
 						name="title"
 						value={title}
-						onChange={e => setTitle(e.target.value)}
+						onChange={e => setTitle(e.target.value)
+						
+						}
 					/>
-					<label className="bg-DarkTextboxBGRD grid grid-rows-[max-content_auto]">
-						<div
-							role="group"
-							className="flex justify-between items-center p-2">
-							<h3>**Описание задачи**</h3>
-							<div role="group">
-								<div className="flex gap-1 bg-DarkTextboxBG px-2 py-1 rounded-md">
-									<button type="button">
-										<h4
-											className="font-black text-lg"
-											onClick={() =>
-												setFontStyles(prev => {
-													return { ...prev, fontWeight: prev.fontWeight === 400 ? 700 : 400 }
-												})
-											}>
-											ж
-										</h4>
-									</button>
-									<button
-										type="button"
-										onClick={() =>
-											setFontStyles(prev => {
-												return { ...prev, fontStyle: prev.fontStyle === 'normal' ? 'italic' : 'normal' }
-											})
-										}>
-										<h4 className="italic font-bold text-lg">к</h4>
-									</button>
-									<button
-										type="button"
-										onClick={() =>
-											setFontStyles(prev => {
-												return { ...prev, textDecorationLine: prev.textDecorationLine === 'none' ? 'underline' : 'none' }
-											})
-										}>
-										<h4 className="underline font-bold text-lg">ч</h4>
-									</button>
-								</div>
-							</div>
-						</div>
-						<textarea
-							className="bg-transparent w-full h-full resize-none p-2"
-							style={fontStyle}
-							value={description}
-							onChange={e => setDescription(e.target.value)}
-						/>
-					</label>
-
+					<label>Описание задачи</label>
+					<EditBar />
 					<div
 						role="group"
 						className="flex items-center gap-2">

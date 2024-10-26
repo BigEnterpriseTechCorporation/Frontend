@@ -3,22 +3,28 @@ import ReactQuill from 'react-quill-new';
 import 'react-quill-new/dist/quill.snow.css';
 
 export default function EditBar() {
-    const [value, setValue] = useState('');
-    const quillRef = useRef<ReactQuill | null>(null);
-
-    useEffect(() => {
-        if (quillRef.current) {
-            const editor = quillRef.current.getEditor();
-            console.log(editor);
-        }
-    }, []);
-
+    const modules = {
+        toolbar: [
+          [{ font: [] }],
+          [{ size: [] }],
+          [{color: []}],
+          ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+          [
+            { list: 'ordered' },
+            { list: 'bullet' },
+            { indent: '-1' },
+            { indent: '+1' },
+          ],
+          ['link', 'image', 'video'],
+          ['clean'],
+        ],
+        clipboard: {
+          // toggle to add extra line breaks when pasting HTML:
+          matchVisual: false,
+        },
+      }
     return (
-        <ReactQuill
-            ref={quillRef}
-            theme="snow"
-            value={value}
-            onChange={setValue}
-        />
+        <ReactQuill modules={modules} theme="snow" className="bg-DarkTextboxBGRD h-full grid grid-rows-[max-content_auto]"/>
     );
 }
+
