@@ -1,13 +1,9 @@
 import { Action, ThunkAction, configureStore } from '@reduxjs/toolkit'
 import addTasks from './slices/addTaskSlice'
-import fullTasks from './slices/fullTaskSlice'
-import drag from './slices/dragSlice'
 
 const store = configureStore({
 	reducer: {
 		addTasks,
-		fullTasks,
-		drag
 	},
 })
 

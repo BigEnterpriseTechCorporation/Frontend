@@ -2,38 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-textarea:focus,
-input:focus {
-	outline: none;
+textarea:focus, input:focus{
+    outline: none;
 }
-
-::-webkit-scrollbar,
-::-webkit-scrollbar-thumb,
-::-webkit-scrollbar-track {
-	width: 8px;
-	border: none;
-	background: transparent;
-}
-
-::-webkit-scrollbar-button,
-::-webkit-scrollbar-track-piece,
-::-webkit-scrollbar-corner,
-::-webkit-resizer {
-	display: none;
-}
-
-::-webkit-scrollbar-thumb {
-	border-radius: 6px;
-	background-color: rgba(57, 59, 65, 1);
-}
-
-::-webkit-scrollbar-track {
-	background-image: url('../assets/icons/Track.png');
-	background-repeat: repeat-y;
-	background-size:auto;
-  background-position: center
-}
-
 
 .ql-editor {
     height: 100%;
