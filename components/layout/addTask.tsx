@@ -10,6 +10,13 @@ export default function AddTask() {
 	const dispatch = useAppDispatch()
 	const isAddTaskOpened = useAppSelector(state => state.addTasks.isMenuOpened)
 
+  //? title label
+  const [title,setTitle] = useState("")
+
+  //? description label
+    const [description, setDescription] = useState('')
+
+
 	//? description formats
 	const [fontStyle, setFontStyles] = useState({ fontWeight: 400, fontStyle: 'normal', textDecorationLine: 'none' })
 
@@ -50,7 +57,12 @@ export default function AddTask() {
 	return (
 		<AsideContainer
 			rootClassName={!isAddTaskOpened ? 'hidden' : ''}
-			rootOnClick={() => dispatch(toggleAddTasks())}
+			rootOnClick={() => {
+        dispatch(toggleAddTasks())
+        setTitle("")
+        setDescription("")
+        setAssigneesData([""])
+      }}
 			onClick={e => {
 				if (e && e.stopPropagation) e.stopPropagation()
 			}}
@@ -62,6 +74,8 @@ export default function AddTask() {
 					<Input
 						type="text"
 						name="title"
+						value={title}
+						onChange={e => setTitle(e.target.value)}
 					/>
 					<label className="bg-DarkTextboxBGRD grid grid-rows-[max-content_auto]">
 						<div
@@ -105,6 +119,8 @@ export default function AddTask() {
 						<textarea
 							className="bg-transparent w-full h-full resize-none p-2"
 							style={fontStyle}
+							value={description}
+							onChange={e => setDescription(e.target.value)}
 						/>
 					</label>
 
