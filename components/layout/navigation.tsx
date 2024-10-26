@@ -1,33 +1,27 @@
-"use client"
-import { UserRound, ListFilter, Search, Upload } from "lucide-react";
-import { useState } from "react";
-import Input from "../ui/input";
+import { UserRound, ListFilter, Search, Upload } from 'lucide-react'
+import Input from '../ui/input'
+import { cn } from '@/utils/css'
 
-export default function Navigation(){
-  const [isSearchOpen, setIsSearchOpen] = useState(false)
-
-  const toggleSearch = () => {
-    setIsSearchOpen(prev => !prev)
-  }
-
-  return (
-		<nav className="bg-DarkTextboxBGRD w-1/2 py-3 px-4.5 flex justify-between items-center justify-self-center rounded-full">
-			<div
-				role="group"
-				className="flex gap-2">
-				<UserRound />
-				<Upload />
-			</div>
-			<div
-				role="group"
-				className="flex gap-2">
-				<Input className={isSearchOpen ? 'w-80' : 'w-0 !p-0'} />
-
-				<button onClick={toggleSearch}>
-					<Search />
+export default function Navigation() {
+	return (
+		<nav
+			className={cn(
+				'bg-DT_TextboxCont',
+				'w-1/2 h-10',
+				'py-3 px-4.5',
+				'grid grid-cols-[max-content_max-content_auto_max-content] items-center content-center gap-2',
+				'justify-self-center',
+				'rounded-full'
+			)}>
+			<UserRound height={14} />
+			<Upload height={14} />
+			<label className="grid grid-cols-[max-content_auto] items-stretch">
+				<button className={cn('bg-DT_SearchBar', 'h-full', 'rounded-l-md')}>
+					<Search className="p-1" />
 				</button>
-				<ListFilter />
-			</div>
+				<Input className={cn('bg-DT_SearchBar', 'rounded-r-md', 'pl-0')} />
+			</label>
+			<ListFilter height={14} />
 		</nav>
 	)
 }

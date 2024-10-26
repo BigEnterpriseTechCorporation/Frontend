@@ -1,4 +1,5 @@
-import { ComponentPropsWithoutRef } from "react";
+import { cn } from '@/utils/css'
+import { ComponentPropsWithoutRef } from 'react'
 
 interface AsideContainerProps extends ComponentPropsWithoutRef<'div'> {
 	rootClassName?: string
@@ -6,14 +7,15 @@ interface AsideContainerProps extends ComponentPropsWithoutRef<'div'> {
 	children: React.ReactNode
 }
 
-export default function AsideContainer({children,className,rootClassName,rootOnClick,onClick,...props}:AsideContainerProps){
-  return (
-		<div className={rootClassName+" absolute w-screen h-screen z-20 top-0 left-0 bg-[rgba(4,4,4,0.6)] flex justify-center items-center"} onClick={rootOnClick}>
+export default function AsideContainer({ children, className, rootClassName, rootOnClick, onClick, ...props }: AsideContainerProps) {
+	return (
+		<div
+			className={cn(rootClassName,'fixed z-20 top-0 left-0', 'w-screen h-screen', 'bg-[rgba(4,4,4,0.6)]')}
+			onClick={rootOnClick}>
 			<div
-				className={className + ' p-6 bg-BacklLable rounded-2xl'}
+				className={cn(className, 'p-6', 'bg-DT_Backl', 'rounded-2xl', 'w-3/5 h-1/2')}
 				{...props}
-				onClick={onClick}
-				>
+				onClick={onClick}>
 				{children}
 			</div>
 		</div>

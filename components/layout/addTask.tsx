@@ -57,17 +57,16 @@ export default function AddTask() {
 
 	return (
 		<AsideContainer
-			rootClassName={!isAddTaskOpened ? 'hidden' : ''}
+			rootClassName={!isAddTaskOpened ? 'hidden' : 'flex justify-center items-center'}
 			rootOnClick={() => {
-        dispatch(toggleAddTasks())
-        setTitle("")
-        setDescription("")
-        setAssigneesData([""])
-      }}
+				dispatch(toggleAddTasks())
+				setTitle('')
+				setDescription('')
+				setAssigneesData([''])
+			}}
 			onClick={e => {
 				if (e && e.stopPropagation) e.stopPropagation()
-			}}
-			className="w-3/5 h-1/2">
+			}}>
 			<form className="grid grid-rows-[auto_max-content] h-full">
 				<div
 					role="group"
@@ -82,8 +81,52 @@ export default function AddTask() {
 						
 						}
 					/>
-					<label>Описание задачи</label>
-					<EditBar />
+					<label className="bg-DT_LPassBack grid grid-rows-[max-content_auto]">
+						<div
+							role="group"
+							className="flex justify-between items-center p-2">
+							<h3>**Описание задачи**</h3>
+							<div role="group">
+								<div className="flex gap-1 bg-DarkTextboxBG px-2 py-1 rounded-md">
+									<button type="button">
+										<h4
+											className="font-black text-lg"
+											onClick={() =>
+												setFontStyles(prev => {
+													return { ...prev, fontWeight: prev.fontWeight === 400 ? 700 : 400 }
+												})
+											}>
+											ж
+										</h4>
+									</button>
+									<button
+										type="button"
+										onClick={() =>
+											setFontStyles(prev => {
+												return { ...prev, fontStyle: prev.fontStyle === 'normal' ? 'italic' : 'normal' }
+											})
+										}>
+										<h4 className="italic font-bold text-lg">к</h4>
+									</button>
+									<button
+										type="button"
+										onClick={() =>
+											setFontStyles(prev => {
+												return { ...prev, textDecorationLine: prev.textDecorationLine === 'none' ? 'underline' : 'none' }
+											})
+										}>
+										<h4 className="underline font-bold text-lg">ч</h4>
+									</button>
+								</div>
+							</div>
+						</div>
+						<textarea
+							className="bg-transparent w-full h-full resize-none p-2"
+							style={fontStyle}
+							value={description}
+							onChange={e => setDescription(e.target.value)}
+						/>
+					</label>
 					<div
 						role="group"
 						className="flex items-center gap-2">
