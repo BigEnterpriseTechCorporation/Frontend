@@ -35,7 +35,7 @@ export default function AddTask() {
 		return (
 			<div
 				key={`assignee_${index}`}
-				className="flex items-center bg-DT_TextboxCont rounded-md px-2 py-2">
+				className="grid grid-cols-[auto_max-content] items-center bg-DT_TextboxCont rounded-md px-2 py-2">
 				<Input
 					placeholder="Фамилия И.О."
 					value={value}
@@ -70,27 +70,27 @@ export default function AddTask() {
 			<form className="grid grid-rows-[auto_max-content] h-full">
 				<div
 					role="group"
-					className="flex flex-col">
+					className="flex flex-col w-full overflow-x-hidden">
 					<Input
 						className="min-h-4 2sm:h-12 2sm:mb-4 sm:h-16"
 						type="text"
 						name="title"
 						value={title}
-						placeholder='Заголовок задачи'
+						placeholder="Заголовок задачи"
 						onChange={e => setTitle(e.target.value)}
 					/>
-					<label>Описание</label>
+					<h3 className=" text-xl">Описание</h3>
 					<EditBar />
-					<div
-						role="group"
-						className="flex items-center gap-2">
-						{assignees}
-						<button
-							type="button"
-							onClick={() => addAssignee()}>
-							<Plus />
-						</button>
-					</div>
+				</div>
+				<div
+					role="group"
+					className="grid lg:grid-cols-3 2sm:grid-cols-2 grid-cols-1 items-center gap-2 w-full">
+					{assignees}
+					<button
+						type="button"
+						onClick={() => addAssignee()}>
+						<Plus />
+					</button>
 				</div>
 			</form>
 		</AsideContainer>
