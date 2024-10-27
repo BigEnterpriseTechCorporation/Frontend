@@ -60,11 +60,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
 	children,
-}: Readonly<{
+}: Readonly<{	
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" className='theme-dark'>
 			<body className={`${sfPro.className} bg-DT_DeepBckgr text-DT_Text overflow-x-hidden`}>{children}</body>
 		</html>
 	)
