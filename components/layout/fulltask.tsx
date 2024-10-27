@@ -17,7 +17,7 @@ export default function FullTask() {
 	return (
 		<AsideContainer
 			rootClassName={!isFullTaskOpened ? '!hidden' : 'flex justify-center items-center'}
-			className={cn('!p-0', '!h-3/5 !w-4/5', 'grid grid-rows-2')}>
+			className={cn('!p-0', 'sm:!h-3/5 sm:!w-4/5', 'grid grid-rows-2')}>
 			<main className={cn('pt-6 px-6 pb-3', 'grid grid-rows-[max-content_auto_fit-content]')}>
 				<div className="flex justify-between">
 					<h2 className="text-xl font-semibold">{taskData.title}</h2>
@@ -30,7 +30,7 @@ export default function FullTask() {
 						</button>
 					</div>
 				</div>
-				<p className={cn('py-2', 'text-sm', 'overflow-y-scroll')}>{taskData.description}</p>
+				<p className={cn('py-2', 'text-sm', 'overflow-y-auto')}>{taskData.description}</p>
 				<h3 className="">{taskData.assignee}</h3>
 			</main>
 			{
