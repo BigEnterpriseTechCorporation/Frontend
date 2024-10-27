@@ -9,16 +9,16 @@ const config: Config = {
 			},
 			colors: {
 				//? bg colors
-				DT_DeepBckgr: 'rgba(31, 31, 31, 1)',
-				DT_WTBack: 'rgb(40, 42, 46)',
-				DT_Text: 'rgba(241, 241, 241, 1)',
-				DT_Backl: 'rgba(49, 51, 56, 1)',
-				DT_TextboxEText: 'rgba(57, 59, 65, 1)',
-				DT_LPassBack: 'rgba(37, 37, 37, 1)',
-				DT_TextboxCont: "rgba(35, 36, 40, 1)",
-				DT_Login: "rgba(192, 192, 192, 1)",
-				DT_BacklLable: "rgba(35, 36, 40, 1)",
-				DT_SearchBar: "rgba(29, 29, 29, 1)",
+				DT_DeepBckgr: 'var(--bg-colors-DT_DeepBckgr)',
+				DT_WTBack: 'var(--bg-colors-DT_WTBack)',
+				DT_Text: 'var(--bg-colors-DT_Text)',
+				DT_Backl: 'var(--bg-colors-DT_Backl)',
+				DT_TextboxEText: 'var(--bg-colors-DT_TextboxEText)',
+				DT_LPassBack: 'var(--bg-colors-DT_LPassBack)',
+				DT_TextboxCont: 'var(--bg-colors-DT_TextboxCont)',
+				DT_Login: 'var(--bg-colors-DT_Login)',
+				DT_BacklLable: 'var(--bg-colors-DT_BacklLable)',
+				DT_SearchBar: 'var(--bg-colors-DT_SearchBar)',
 
 				//? highlight color
 				Blue: 'rgb(0, 122, 255)',

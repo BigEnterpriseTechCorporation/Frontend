@@ -1,8 +1,8 @@
-import { UserRound, ListFilter, Search, Upload } from 'lucide-react'
+import { UserRound, ListFilter, Search, Upload, Sun } from 'lucide-react'
 import Input from '../ui/input'
 import { cn } from '@/utils/css'
 import Link from 'next/link'
-
+import { useEffect, useState } from 'react';
 
 export default function Navigation() {
 	return (
@@ -11,7 +11,7 @@ export default function Navigation() {
 				'bg-DT_TextboxCont',
 				'lg:w-1/2 w-full h-10',
 				'py-3 px-4.5',
-				'grid grid-cols-[max-content_max-content_auto_max-content] items-center content-center gap-2',
+				'grid grid-cols-[max-content_max-content_auto_max-content_max-content] items-center content-center gap-2',
 				'justify-self-center',
 				'rounded-full'
 			)}>
@@ -30,3 +30,4 @@ export default function Navigation() {
 		</nav>
 	)
 }
+

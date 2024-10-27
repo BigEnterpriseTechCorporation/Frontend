@@ -64,7 +64,7 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" className='light:theme-light theme-dark'>
 			<body className={`${sfPro.className} bg-DT_DeepBckgr text-DT_Text overflow-x-hidden`}>{children}</body>
 		</html>
 	)
