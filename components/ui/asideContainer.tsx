@@ -14,7 +14,7 @@ export default function AsideContainer({ children, className, rootClassName, roo
 			className={cn(rootClassName,'fixed z-20 top-0 left-0', 'w-screen h-screen', 'bg-[rgba(4,4,4,0.6)]')}
 			onClick={rootOnClick}>
 			<div
-				className={cn(className, 'p-6', 'bg-DT_Backl', filter ? 'rounded-2xl' : 'rounded-none', filter ? 'w-11/12 md:w-3/5' : 'w-full max-h-[50%]', 'h-5/6 ')}
+				className={cn(className, 'p-6', 'bg-DT_Backl', filter ? 'rounded-2xl' : 'rounded-md', filter ? 'w-11/12 md:w-3/5' : 'w-11/12 md:w-3/4 sm:!h-[30%] !h-11/12', 'h-5/6')}
 				{...props}
 				onClick={onClick}>
 				{children}
