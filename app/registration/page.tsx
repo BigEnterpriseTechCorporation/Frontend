@@ -6,7 +6,6 @@ import PasswordValidator from 'password-validator'
 import Input from '@/components/ui/input'
 import { cn } from '@/utils/css'
 import { host } from '@/config'
-import { cn } from '@/utils/css'
 
 export default function Registration() {
 	async function onSubmit(event: FormEvent<HTMLFormElement>) {
