@@ -1,4 +1,5 @@
 'use client'
+import { host } from '@/config'
 import { UUID } from 'crypto'
 import { useEffect, useState } from 'react'
 
@@ -8,10 +9,11 @@ export interface user {
 	login: string
 	boards: number[]
 	createdAt: string
+	jobTitle: string
 }
 
 export default function useUser(): user | string {
-	const [state, setState] = useState<user | string>({ id: 'null-null-null-null-null', name: '', login: '', boards: [], createdAt: '-1' })
+	const [state, setState] = useState<user | string>({ id: 'null-null-null-null-null', name: '', login: '', boards: [], createdAt: '-1',jobTitle:"" })
 
 	useEffect(() => {
 		try {
@@ -19,7 +21,7 @@ export default function useUser(): user | string {
 				throw new Error("no token")
 			}
 
-			fetch(`http://100.126.9.5/api/Account/self`, {
+			fetch(`http://${host}/api/Account/self`, {
 				method: 'GET',
 				headers: {
 					Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -30,10 +32,12 @@ export default function useUser(): user | string {
 					setState(data)
 					localStorage.setItem('user', JSON.stringify(data))
 				})
-				.catch(error => setState(localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')!) : error.toString()))
+				.catch(error => setState(error.toString()))
 		} catch(error) {
 			console.error(error)
 		}
+
+		
 	}, [])
 
 	return state

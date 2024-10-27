@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { FormEvent } from 'react'
 import PasswordValidator from 'password-validator'
 import Input from '@/components/ui/input'
+import { host } from '@/config'
 
 export default function Registration() {
 	async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -36,7 +37,7 @@ export default function Registration() {
 				throw new Error('Invalid password')
 			}
 
-			const response = await fetch(`http://100.126.9.5/api/Account/register`, {
+			const response = await fetch(`http://${host}/api/Account/register`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json; charset=utf-8',

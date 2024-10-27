@@ -1,6 +1,7 @@
 'use client'
 import Input from '@/components/ui/input'
 import Label from '@/components/ui/label'
+import { host } from '@/config'
 import { cn } from '@/utils/css'
 import Link from 'next/link'
 import { FormEvent } from 'react'
@@ -12,7 +13,7 @@ export default function Auth() {
 			const formData = new FormData(event.currentTarget)
 			const login = formData.get('login')
 			const password = formData.get('password')
-			const response = await fetch(`http://100.126.9.5/api/Account/login`, {
+			const response = await fetch(`http://${host}/api/Account/login`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json; charset=utf-8',
@@ -23,6 +24,7 @@ export default function Auth() {
 
 			// Handle response if necessary
 			const data = await response.json()
+			localStorage.clear()
 			localStorage.setItem('token', data.token)
 
 			console.log(data)
