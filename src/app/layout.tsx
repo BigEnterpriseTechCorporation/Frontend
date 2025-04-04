@@ -35,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sfPro.className} text-white`}>
+      <body className={`${sfPro.className} text-white font-medium`}>
         {children}
       </body>
     </html>

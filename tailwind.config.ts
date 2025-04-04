@@ -14,6 +14,8 @@ export default {
 				sea: '#5865F2',
 				silver: '#C0C0C0',
 				armor: '#5D5D5D',
+				gunmetal: '#232428',
+				ebony: '#313338',
 			},
 		},
 	},

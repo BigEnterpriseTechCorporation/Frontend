@@ -1,0 +1,1 @@
+export type status = "draft" | "cancelled" | "accepted" | "closed"
