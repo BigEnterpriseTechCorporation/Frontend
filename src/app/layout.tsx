@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Organizer",
   //description: "Your slogan here",
 };
-
+// hello world
 export default function RootLayout({
   children, 
 }: Readonly<{
