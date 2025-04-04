@@ -11,6 +11,6 @@ export default function Home() {
 	}, [])
 
 	if (role === '') {
-		router.push('/auth')
+		router.push('/logIn')
 	}
 }
