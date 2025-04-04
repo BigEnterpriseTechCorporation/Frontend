@@ -67,7 +67,7 @@ import { ReactComponent as YourIconName } from '@/assets/icons/YourImageName'
 
 ## Вы _ДОЛЖНЫ_ прочитать это перед написанием кода
 
-### ВСЕГДА трэкайте ваш прогресс в notion _ссылка_
+### ВСЕГДА трэкайте ваш прогресс в notion [_ссылка_](https://www.notion.so/1cb3213b74dc80838a4eedc34e94f040?v=1cb3213b74dc80708e28000c6e171243&pvs=4)
 
 ### Названия файлов должны быть с маленькой буквы layout.tsx, app.tsx и тд.
 

@@ -3,8 +3,8 @@ import "./globals.css";
 
 //? title that will be displayed on page label
 export const metadata: Metadata = {
-  title: "Your website name",
-  description: "Your slogan here",
+  title: "Organizer",
+  //description: "Your slogan here",
 };
 
 export default function RootLayout({
