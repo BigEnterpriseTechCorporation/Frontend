@@ -15,8 +15,9 @@ export default function APanel(){
                         <Image src={admin} alt="admin.svg" width={30} height={30} className="ml-2"/>
                     </div>
                 </div>
-                <div className="grid grid-cols-3 p-3 gap-2 max-h-[70vh]">
+                <div className="grid grid-cols-3 p-6 pt-0 gap-4 max-h-[70vh]">
                     <ItemPanel
+                            title="Организаторы"
                             organizers={[
                                 {
                                     title: "Внедрения Я.Метрики",
@@ -43,8 +44,10 @@ export default function APanel(){
                                     nickname: "Ник"
                                 }
                             ]}
+                        
                     />
                     <ItemPanel
+                            title="На согласовании"
                             organizers={[
                                 {
                                 title: "Внедрения Я.Метрики",
@@ -61,6 +64,7 @@ export default function APanel(){
                             ]}
                     />
                     <ItemPanel
+                            title="Волонтёры"
                             organizers={[
                                 {
                                 title: "Внедрения Я.Метрики",
@@ -77,6 +81,7 @@ export default function APanel(){
                             ]}
                     />
                     <ItemPanel
+                            title="Запланировано"
                             organizers={[
                                 {
                                 title: "Внедрения Я.Метрики",
@@ -93,6 +98,7 @@ export default function APanel(){
                             ]}
                     />
                     <ItemPanel
+                            title="Активно"
                             organizers={[
                                 {
                                 title: "Внедрения Я.Метрики",
@@ -109,6 +115,7 @@ export default function APanel(){
                             ]}
                     />
                     <ItemPanel
+                            title="Выполнено"
                             organizers={[
                                 {
                                 title: "Внедрения Я.Метрики",

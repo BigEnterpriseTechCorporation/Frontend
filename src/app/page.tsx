@@ -125,7 +125,7 @@ export default function Home() {
 			</footer>
 			<BgImageContainer
 				image={apanel}
-				className='rounded-none bg-transparent p-5 max-h-[100vh]'
+				className='rounded-none bg-transparent p-5'
 				imageClassName='rounded-none bg-[none]'
 			>
 				<APanel />
