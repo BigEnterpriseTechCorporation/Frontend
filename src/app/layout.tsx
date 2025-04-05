@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local"
+import { ThemeProvider } from '@/context/ThemeContext'
+import Script from 'next/script'
 
 const sfPro = localFont({
 	src: [
@@ -45,8 +47,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script id="theme-script" strategy="beforeInteractive">
+          {`
+            const savedTheme = localStorage.getItem('theme') || 
+              (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+          `}
+        </Script>
+      </head>
       <body className={`${sfPro.className} text-white font-medium`}>
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

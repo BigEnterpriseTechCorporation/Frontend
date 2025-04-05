@@ -25,17 +25,17 @@ export default function Home() {
 					className='pt-8'
 				/>
 				<div>
-					<h1 className='text-8xl text-center font-extrabold text-champagne leading-[5.75rem] tracking-[-0.25rem]'>
+					<h1 className='text-[16vh] text-center font-extrabold text-champagne leading-[15vh] tracking-[-0.25rem]'>
 						Together
 						<br /> We Can
 					</h1>
-					<h3 className='text-center -mt-4 text-2xl font-light text-[#F0ECDC]'>
+					<h3 className='text-center -mt-2 text-4xl font-light text-[#F0ECDC]'>
 						Вместе мы можем больше
 					</h3>
 				</div>
 				<Link
 					href={'/'}
-					className='text-[#F0ECDC] border-[#F0ECDC] border-[6px] rounded-2xl w-1/2 text-5xl bg-[rgba(50,50,50,0.5)] py-2 absolute bottom-16 text-center'
+					className='text-[#F0ECDC] border-[#F0ECDC] border-[6px] rounded-2xl w-1/2 text-5xl bg-[rgba(50,50,50,0.5)] py-2 absolute bottom-[15vh] text-center'
 				>
 					Участвовать
 				</Link>
@@ -45,7 +45,7 @@ export default function Home() {
 					className='absolute -z-10 top-0 w-screen h-screen object-cover'
 				/>
 			</header>
-			<section className='flex flex-col items-center py-16'>
+			<section className='flex flex-col items-center py-16' id='goals'>
 				<h1 className='text-5xl mb-10'>Цели нашей платформы</h1>
 				<ul className='px-20 w-full flex flex-col gap-8'>
 					<li className='w-full h-[22.5rem] '>
@@ -109,18 +109,64 @@ export default function Home() {
 			<footer>
 				<BgImageContainer
 					image={footerBg}
-					className='rounded-b-none'
+					className='rounded-b-none !p-0'
 					imageClassName='rounded-b-none'
 				>
-					<div className='px-16 pt-16 flex justify-between'>
-						<div>
-							<div></div>
-							<div></div>
-							<div></div>
+					<div className='px-16 pt-16 pb-32 flex justify-between'>
+						<div className='flex gap-16'>
+							<div>
+								<h2 className='text-4xl mb-6'>Администрации</h2>
+								<ul className='font-light flex flex-col gap-4'>
+									<li>
+										<Link href={'/'}>Профиль</Link>
+									</li>
+									<li>
+										<Link href={'/'}>Панель администратора</Link>
+									</li>
+									<li>
+										<Link href={'/'}>Список волонтёров</Link>
+									</li>
+									<li>
+										<Link href={'/'}>Список организаций</Link>
+									</li>
+								</ul>
+							</div>
+							<div>
+								<h2 className='text-4xl mb-6'>Волонтёрам</h2>
+								<ul className='font-light flex flex-col gap-4'>
+									<li>
+										<Link href={'/'}>Профиль</Link>
+									</li>
+									<li>
+										<Link href={'/'}>Мероприятия</Link>
+									</li>
+									<li>
+										<Link href={'/'}>Выписки</Link>
+									</li>
+								</ul>
+							</div>
+							<div>
+								<h2 className='text-4xl mb-6'>Организациям</h2>
+								<ul className='font-light flex flex-col gap-4'>
+									<li>
+										<Link href={'/'}>Профиль</Link>
+									</li>
+									<li>
+										<Link href={'/'}>Мероприятия</Link>
+									</li>
+									<li>
+										<Link href={'/'}>Заявки волонтёров</Link>
+									</li>
+									<li>
+										<Link href={'/'}>Выписки</Link>
+									</li>
+								</ul>
+							</div>
 						</div>
-						<Image src={logo} alt=''/>
 					</div>
-					<div></div>
+					<div className='border-t border-white px-12 py-2'>
+						<h3 className='text-end font-light text-md'>Обезьяны с гранатами</h3>
+					</div>
 				</BgImageContainer>
 			</footer>
 			<BgImageContainer

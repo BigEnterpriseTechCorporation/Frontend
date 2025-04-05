@@ -4,6 +4,7 @@ import menu from "@/assets/icons/menu.svg"
 import plus from "@/assets/icons/plus.svg"
 import check from "@/assets/icons/check.svg"
 import cross from "@/assets/icons/cross.svg"
+import { useTheme } from '@/context/ThemeContext'
 
 interface ItemForPanel {
     title: string;
@@ -17,36 +18,37 @@ interface ItemForPanel {
     title: string;
   }
 export default function ItemPanel({organizers, title}:ItemBlock){
+    const { isDarkTheme } = useTheme()
     return (
-        <div className="bg-[#1B1C1F99] w-[95%] rounded-2xl">
-            <div className="flex justify-between items-center bg-gunmetal pr-4 pl-4 p-2 rounded-t-2xl rounded-b-none">
-                <h2 className="text-xl text-white">{title}</h2>
+        <div className={`${isDarkTheme ? 'bg-[#1B1C1F99]' : 'bg-[#87879975]'}  w-full rounded-2xl`}>
+            <div className={`${isDarkTheme ? 'bg-gunmetal' : 'bg-antiGunmetal '} flex justify-between items-center pr-4 pl-4 p-2 rounded-t-2xl rounded-b-none`}>
+                <h2 className={`${isDarkTheme ? 'text-white' : 'text-[#313338]'} text-xl`}>{title}</h2>
                 <button>
-                    <Image src={plus} alt="menu" width={15} height={15} />
+                    <Image src={plus} alt="menu" width={15} height={15} className={`${!isDarkTheme ? 'brightness-0' : ''}`} />
                 </button>
             </div>
             <div className={`space-y-2 p-3 max-h-[180px] overflow-y-auto ScrollBar`}>
                 {organizers.map((organizer, index) => (
                 <div 
                     key={index}
-                    className="bg-ebony rounded-lg shadow-md hover:shadow-lg transition-shadow p-4"
+                    className={`${isDarkTheme ? 'bg-ebony' : 'bg-antiGunmetal '}  rounded-lg shadow-md hover:shadow-lg transition-shadow p-4`}
                 >
                     <div className="flex justify-between items-center">
-                        <h3 className="text-white">
+                        <h3 className={`${isDarkTheme ? 'text-white' : 'text-[#313338]'}`} >
                             {organizer.title}
                         </h3>
                         <button>
-                            <Image src={menu} alt="menu" width={5} height={5} />
+                            <Image src={menu} alt="menu" width={5} height={5} className={`${!isDarkTheme ? 'brightness-0' : ''}`}/>
                         </button>
                     </div>
-                    <p className="text-white mb-6 text-xs">
+                    <p className={`${isDarkTheme ? 'text-white' : 'text-[#313338]'}  mb-6 text-xs`}>
                         ({organizer.description})
                     </p>
                     <div className="flex justify-between items-center">
-                        <div className="text-white font-medium text-xs">
+                        <div className={`${isDarkTheme ? 'text-white' : 'text-[#313338]'} font-medium text-xs`}>
                             {organizer.name}
                             {organizer.nickname && ( 
-                                <span className="ml-2 text-white">@{organizer.nickname}</span>
+                                <span className={`${isDarkTheme ? 'text-white' : 'text-[#313338]'} ml-2`}>@{organizer.nickname}</span>
                             )}
                         </div>
                         {title === "На согласовании" && (
