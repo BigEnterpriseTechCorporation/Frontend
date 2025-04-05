@@ -4,7 +4,7 @@ import React, { FC, useEffect, useState } from 'react';
 import { Button, Space, Spin } from 'antd';
 
 import ErrorModal from '../../../basic/ErrorModal';
-import { useDeleteOrganizationMutation } from '../../../../__generate/graphql-frontend'
+import { useDeleteOrganizationMutation } from '../../graphql-frontend'
 import { useNavigate, useParams } from 'react-router'
 
 export const OrganizationDelete: FC = () => {

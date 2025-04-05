@@ -1,11 +1,12 @@
+"use client"
 import React, { FC, useState } from 'react';
 import { Button, Space, Spin, Table } from 'antd';
 import { Link, useNavigate, useParams } from 'react-router';
 import { useApolloClient } from '@apollo/client';
 
-import { extractParamName, extractParamValue } from '../../../../basic/Utils';
+import { extractParamName, extractParamValue } from '@/basic/Utils';
 import ErrorModal from '../../../basic/ErrorModal';
-import { useSearchPersonQuery } from '../../../../__generate/graphql-frontend'
+import { useSearchPersonQuery } from '../../graphql-frontend'
 
 export const PersonList: FC<{ selectedPerson?: string | null, setSelectedPerson?: (value: string) => void }> = ({ selectedPerson, setSelectedPerson }) => {
 

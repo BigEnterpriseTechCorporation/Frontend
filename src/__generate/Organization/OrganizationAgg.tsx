@@ -1,3 +1,4 @@
+"use client"
 import React, { FC } from 'react';
 import { Layout, Menu } from 'antd';
 import { Link, Outlet, Route } from 'react-router';
@@ -5,11 +6,13 @@ import { Link, Outlet, Route } from 'react-router';
 import { EventList } from './Event/EventList'
 import { EventBase } from './Event/EventBase';
 import { EventCreate } from './Event/EventCreate';
-import { EventUpdate } from './Event/EventUpdate';import { EventDelete } from './Event/EventDelete';
+import { EventUpdate } from './Event/EventUpdate';
+import { EventDelete } from './Event/EventDelete';
 import { OrganizationList } from './Organization/OrganizationList'
 import { OrganizationBase } from './Organization/OrganizationBase';
 import { OrganizationCreate } from './Organization/OrganizationCreate';
-import { OrganizationUpdate } from './Organization/OrganizationUpdate';import { OrganizationDelete } from './Organization/OrganizationDelete';
+import { OrganizationUpdate } from './Organization/OrganizationUpdate';
+import { OrganizationDelete } from './Organization/OrganizationDelete';
 
 const { Sider } = Layout;
 

@@ -167,8 +167,7 @@ export default function Home() {
 						<h3 className='text-end font-light text-md'>Обезьяны с гранатами</h3>
 					</div>
 				</BgImageContainer>
-			</footer>
+			</footer>*/}
 		</main>
 	)
 }
-/*==

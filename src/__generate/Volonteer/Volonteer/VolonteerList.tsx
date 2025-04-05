@@ -1,11 +1,12 @@
+"use client"
 import React, { FC, useState } from 'react';
 import { Button, Space, Spin, Table } from 'antd';
 import { Link, useNavigate, useParams } from 'react-router';
 import { useApolloClient } from '@apollo/client';
 
-import { extractParamName, extractParamValue } from '../../../../basic/Utils';
+import { extractParamName, extractParamValue } from '@/basic/Utils';
 import ErrorModal from '../../../basic/ErrorModal';
-import { useSearchVolonteerQuery } from '../../../../__generate/graphql-frontend'
+import { useSearchVolonteerQuery } from '../../graphql-frontend'
 
 export const VolonteerList: FC<{ selectedVolonteer?: string | null, setSelectedVolonteer?: (value: string) => void }> = ({ selectedVolonteer, setSelectedVolonteer }) => {
 

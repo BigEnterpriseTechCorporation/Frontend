@@ -1,10 +1,10 @@
-
+"use client"
 import React, { FC, useEffect, useState } from 'react';
 
 import { Button, Space, Spin } from 'antd';
 
 import ErrorModal from '../../../basic/ErrorModal';
-import { useDeleteVolonteerEventRequestMutation } from '../../../../__generate/graphql-frontend'
+import { useDeleteVolonteerEventRequestMutation } from '../../graphql-frontend'
 import { useNavigate, useParams } from 'react-router'
 
 export const VolonteerEventRequestDelete: FC = () => {

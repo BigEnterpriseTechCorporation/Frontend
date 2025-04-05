@@ -1,11 +1,11 @@
-
+"use client"
 import React, { FC, useEffect, useState } from 'react';
 
 import { Button, Space, Spin } from 'antd';
 
 import ErrorModal from '../../../basic/ErrorModal';
 
-import { EventAttributesFragment, _UpdateEventInput, useGetForUpdateEventMutation, useUpdateEventMutation } from '../../../../__generate/graphql-frontend'
+import { EventAttributesFragment, _UpdateEventInput, useGetForUpdateEventMutation, useUpdateEventMutation } from '../../graphql-frontend'
 import { EventUpdateForm } from './EventUpdateForm';
 
 import { useParams, useNavigate, Outlet } from 'react-router'

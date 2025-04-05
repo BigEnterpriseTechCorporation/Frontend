@@ -5,7 +5,6 @@ import { DatePicker, Checkbox, Form, Input, Select, Space, Button, Modal  } from
 const { Option } = Select
 
 import { InputParameters } from './OrganizationCreate';
-import moment from 'moment';
 
 
 interface FormProps{

@@ -1,15 +1,15 @@
-
+"use client"
 import React, { FC, useEffect, useState } from 'react';
 
 import { Button, Space, Spin } from 'antd';
 
 import ErrorModal from '../../../basic/ErrorModal';
 
-import { _CreatePersonInput, useCreatePersonMutation } from '../../../../__generate/graphql-frontend'
+import { _CreatePersonInput, useCreatePersonMutation } from '../../graphql-frontend'
 import { PersonCreateForm } from './PersonCreateForm';
 
 import { useNavigate, useParams } from 'react-router'
-import { extractParamName, extractParamValue } from '../../../../basic/Utils';
+import { extractParamName, extractParamValue } from '@/basic/Utils';
 
 export type InputParameters = Partial<_CreatePersonInput>
 

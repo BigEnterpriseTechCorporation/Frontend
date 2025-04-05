@@ -1,4 +1,4 @@
-
+"use client"
 import React, { FC, useState } from 'react';
 
 import { DatePicker, Checkbox, Form, Input, Select, Space, Button, Modal  } from 'antd';
@@ -65,7 +65,7 @@ export const EventCreateForm: FC<FormProps> = ({ inputParameters, changeInputPar
         width = "90%"
         onCancel = {() => setSelectedOrganizationId(undefined)}
     >
-        <OrganizationList selectedOrganization={selectedOrganizationId } setSelectedOrganization={setSelectedOrganizationId }> </OrganizationList>
+        <OrganizationList selectedOrganization={selectedOrganizationId} setSelectedOrganization={setSelectedOrganizationId}/>
     </Modal>
         </>
     )

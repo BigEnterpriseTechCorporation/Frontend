@@ -5,7 +5,7 @@ import { Button, Space, Spin } from 'antd';
 
 import ErrorModal from '../../../basic/ErrorModal';
 
-import { OrganizationAttributesFragment, _UpdateOrganizationInput, useGetForUpdateOrganizationMutation, useUpdateOrganizationMutation } from '../../../../__generate/graphql-frontend'
+import { OrganizationAttributesFragment, _UpdateOrganizationInput, useGetForUpdateOrganizationMutation, useUpdateOrganizationMutation } from '../../graphql-frontend'
 import { OrganizationUpdateForm } from './OrganizationUpdateForm';
 
 import { useParams, useNavigate, Outlet } from 'react-router'
