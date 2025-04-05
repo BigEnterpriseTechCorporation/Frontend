@@ -1,28 +1,29 @@
 'use client'
 
-import Navigation from '@/components/layout/navigation'
-import headerBg from '@/assets/gifs/Home-header.gif'
-import footerBg from '@/assets/gifs/Home-footer.gif'
-import logo from '@/assets/icons/logo.svg'
-import Image from 'next/image'
-import Link from 'next/link'
-import BgImageContainer from '@/components/ui/bgImageContainer'
-import question1 from '@/assets/gifs/question-1.gif'
-import question2 from '@/assets/gifs/question-2.gif'
-import question3 from '@/assets/gifs/question-3.gif'
-import organisation from '@/assets/gifs/organisation.png'
-import volunteer from '@/assets/gifs/volunteer.png'
+//import Navigation from '@/components/layout/navigation'
+//import headerBg from '@/assets/gifs/Home-header.mp4'
+//import footerBg from '@/assets/gifs/Home-footer.gif'
+//import logo from '@/assets/icons/logo.svg'
+//import Image from 'next/image'
+//import Link from 'next/link'
+//import BgImageContainer from '@/components/ui/bgImageContainer'
+//import question1 from '@/assets/gifs/question-1.gif'
+//import question2 from '@/assets/gifs/question-2.gif'
+//import question3 from '@/assets/gifs/question-3.gif'
+//import organisation from '@/assets/gifs/organisation.png'
+//import volunteer from '@/assets/gifs/volunteer.png'
 
 export default function Home() {
 	return (
 		<main className='bg-[#4B6449] absolute w-full -z-20'>
-			<header className='pt-10 flex flex-col items-center relative h-screen'>
+			{/* <header className='pt-10 flex flex-col items-center relative h-screen'>
 				<Navigation />
-				<Image
+				{/* <Image
+					unoptimized
 					src={logo}
 					alt=''
 					className='pt-8'
-				/>
+				/> 
 				<div>
 					<h1 className='text-[16vh] text-center font-extrabold text-champagne leading-[15vh] tracking-[-0.25rem]'>
 						Together
@@ -38,13 +39,12 @@ export default function Home() {
 				>
 					Участвовать
 				</Link>
-				<Image
-					src={headerBg}
-					alt=''
-					className='absolute -z-10 top-0 w-screen h-screen object-cover'
-				/>
+				<video src="/videos/Home-header.mp4"></video>
 			</header>
-			<section className='flex flex-col items-center py-16' id='goals'>
+			<section
+				className='flex flex-col items-center py-16'
+				id='goals'
+			>
 				<h1 className='text-5xl mb-10'>Цели нашей платформы</h1>
 				<ul className='px-20 w-full flex flex-col gap-8'>
 					<li className='w-full h-[22.5rem] '>
@@ -167,7 +167,7 @@ export default function Home() {
 						<h3 className='text-end font-light text-md'>Обезьяны с гранатами</h3>
 					</div>
 				</BgImageContainer>
-			</footer>
+			</footer> */}
 		</main>
 	)
 }
