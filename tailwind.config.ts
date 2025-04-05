@@ -17,6 +17,8 @@ export default {
 				gunmetal: '#232428',
 				ebony: '#313338',
 				champagne: '#E8D4B2',
+				limo: '#2E2E34',
+				ai: '#A1A1A1',
 			},
 		},
 	},

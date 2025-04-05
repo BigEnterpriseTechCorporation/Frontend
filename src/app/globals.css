@@ -2,19 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+	/* Hide scrollbar for IE, Edge and Firefox */
+	.no-scrollbar {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+}
+
+input[type='date']:in-range::-webkit-datetime-edit-year-field,
+input[type='date']:in-range::-webkit-datetime-edit-month-field,
+input[type='date']:in-range::-webkit-datetime-edit-day-field,
+input[type='date']:in-range::-webkit-datetime-edit-text {
+	color: transparent;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  color: white;
+  fill:white;
+}
+
 /*
 !use only in extreme cases
 */
 
-:root{
-  font-size: min(1.5vw, 24px);
+:root {
+	font-size: min(1.5vw, 24px);
 }
 
-textarea:focus, input:focus{
-    outline: none;
+textarea:focus,
+input:focus {
+	outline: none;
 }
 
-.auth{
-  background-image: url("../assets/gifs/1567193588_tumblr_p8si9eE6e01st8fc4o1_1280.gif");
-  background-size: contain;
+.auth {
+	background-image: url('../assets/gifs/1567193588_tumblr_p8si9eE6e01st8fc4o1_1280.gif');
+	background-size: contain;
+}
+
+.scrollbar{
+  scrollbar-width: thin !important;
+  scrollbar-color: #232428 #2B2D32 !important;
 }
