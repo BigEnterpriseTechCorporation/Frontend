@@ -1,17 +1,17 @@
 'use client'
 
-//import Navigation from '@/components/layout/navigation'
-//import headerBg from '@/assets/gifs/Home-header.mp4'
-//import footerBg from '@/assets/gifs/Home-footer.gif'
-//import logo from '@/assets/icons/logo.svg'
-//import Image from 'next/image'
-//import Link from 'next/link'
-//import BgImageContainer from '@/components/ui/bgImageContainer'
-//import question1 from '@/assets/gifs/question-1.gif'
-//import question2 from '@/assets/gifs/question-2.gif'
-//import question3 from '@/assets/gifs/question-3.gif'
-//import organisation from '@/assets/gifs/organisation.png'
-//import volunteer from '@/assets/gifs/volunteer.png'
+import Navigation from '@/components/layout/navigation'
+import headerBg from '@/assets/gifs/Home-header.gif'
+import footerBg from '@/assets/gifs/Home-footer.gif'
+import logo from '@/assets/icons/logo.svg'
+import Image from 'next/image'
+import Link from 'next/link'
+import BgImageContainer from '@/components/ui/bgImageContainer'
+import question1 from '@/assets/gifs/question-1.gif'
+import question2 from '@/assets/gifs/question-2.gif'
+import question3 from '@/assets/gifs/question-3.gif'
+import organisation from '@/assets/gifs/organisation.png'
+import volunteer from '@/assets/gifs/volunteer.png'
 
 export default function Home() {
 	return (
@@ -167,7 +167,7 @@ export default function Home() {
 						<h3 className='text-end font-light text-md'>Обезьяны с гранатами</h3>
 					</div>
 				</BgImageContainer>
-			</footer> */}
+			</footer>
 		</main>
 	)
 }

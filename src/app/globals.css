@@ -39,12 +39,10 @@ input:focus {
 	outline: none;
 }
 
-.auth {
-	background-image: url('../assets/gifs/1567193588_tumblr_p8si9eE6e01st8fc4o1_1280.gif');
-	background-size: contain;
+.auth{
+  background-image: url("../assets/gifs/1567193588_tumblr_p8si9eE6e01st8fc4o1_1280.gif");
+  background-size: contain;
 }
-
-.scrollbar{
-  scrollbar-width: thin !important;
-  scrollbar-color: #232428 #2B2D32 !important;
+.ScrollBar::-webkit-scrollbar {
+  display: none;
 }
