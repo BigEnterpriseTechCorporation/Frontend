@@ -1,21 +1,25 @@
+"use client"
 import { status } from "@/types";
+import { useTheme } from '@/context/ThemeContext'
 
 export default function Status({status}:{status:status}){
+  const { isDarkTheme } = useTheme()
+  
   const data = {
     draft:{
-      color:"bg-silver",
+      color: isDarkTheme ? "bg-silver" : "bg-[#D8DBDF]",
       name: "в черновике"
     },
     cancelled:{
-      color:"bg-red-500",
+      color: isDarkTheme ? "bg-red-500" : "bg-red-400",
       name:"отменено"
     },
     closed:{
-      color:"bg-green-400",
+      color: isDarkTheme ? "bg-green-400" : "bg-green-500",
       name:"завершено"
     }, 
     accepted:{
-      color:"bg-yellow-300",
+      color: isDarkTheme ? "bg-yellow-300" : "bg-yellow-400",
       name:"принято"
     }
   }
@@ -23,7 +27,7 @@ export default function Status({status}:{status:status}){
   return (
 		<div className='flex items-center'>
 			<div className={`h-3 w-3 rounded-full ${data[status].color} mr-2`}></div>
-			<h3 className='text-sm capitalize font-medium'>{data[status].name}</h3>
+			<h3 className={`text-sm capitalize font-medium ${isDarkTheme ? 'text-white' : 'text-[#313338]'}`}>{data[status].name}</h3>
 		</div>
 	)
 }

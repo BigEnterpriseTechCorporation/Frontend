@@ -1,4 +1,5 @@
 import EventCard, { EventCardProps } from '../event'
+import { useTheme } from '@/context/ThemeContext'
 
 const events: EventCardProps[] = [
 	{
@@ -84,6 +85,8 @@ const events: EventCardProps[] = [
 ]
 
 export default function Events() {
+	const { isDarkTheme } = useTheme()
+	
 	return (
 		<div className='h-full overflow-y-hidden max-h-full no-scrollbar'>
 			<h4 className='mb-6'>
@@ -92,14 +95,14 @@ export default function Events() {
 					type='date'
 					name=''
 					id=''
-          className='bg-gunmetal px-1'
+					className={`${isDarkTheme ? 'bg-gunmetal' : 'bg-[#D8DBDF]'} px-1`}
 				/>{' '}
 				до{' '}
 				<input
 					type='date'
 					name=''
 					id=''
-          className='bg-gunmetal px-1'
+					className={`${isDarkTheme ? 'bg-gunmetal' : 'bg-[#D8DBDF]'} px-1`}
 				/>{' '}
 			</h4>
 			<div className='flex flex-col px-12 gap-10 overflow-y-scroll scrollbar h-full'>
