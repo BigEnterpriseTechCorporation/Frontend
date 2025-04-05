@@ -7,7 +7,7 @@
 */
 
 :root{
-  font-size: 1.5vw;
+  font-size: min(1.5vw, 24px);
 }
 
 textarea:focus, input:focus{

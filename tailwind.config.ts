@@ -16,6 +16,7 @@ export default {
 				armor: '#5D5D5D',
 				gunmetal: '#232428',
 				ebony: '#313338',
+				champagne: '#E8D4B2',
 			},
 		},
 	},

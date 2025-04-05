@@ -5,6 +5,11 @@ import localFont from "next/font/local"
 const sfPro = localFont({
 	src: [
 		{
+			path: '../assets/fonts/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Light.otf',
+			weight: '300',
+			style: 'normal',
+		},
+		{
 			path: '../assets/fonts/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Regular.otf',
 			weight: '400',
 			style: 'normal',
@@ -17,6 +22,11 @@ const sfPro = localFont({
 		{
 			path: '../assets/fonts/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Semibold.otf',
 			weight: '600',
+			style: 'normal',
+		},
+		{
+			path: '../assets/fonts/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Heavy.otf',
+			weight: '800',
 			style: 'normal',
 		},
 	],

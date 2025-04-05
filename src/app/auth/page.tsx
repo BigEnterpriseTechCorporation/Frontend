@@ -34,7 +34,7 @@ export default function Auth() {
 				</label>
 				<label className='w-full mb-4'>
 					<h2 className='text-base pl-1 text-silver'>Дата рождения</h2>
-					<div className='grid grid-cols-3 justify-between'>
+					<div className='grid grid-cols-3 gap-6 justify-between'>
 						<Input placeholder='День' />
 						<Input placeholder='Месяц' />
 						<Input placeholder='Год' />
