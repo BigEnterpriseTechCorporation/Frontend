@@ -21,7 +21,7 @@ export default function ItemPanel({organizers, title}:ItemBlock){
     const { isDarkTheme } = useTheme()
     return (
         <div className={`${isDarkTheme ? 'bg-[#1B1C1F99]' : 'bg-[#87879975]'}  w-full rounded-2xl`}>
-            <div className={`${isDarkTheme ? 'bg-gunmetal' : 'bg-antiGunmetal '} flex justify-between items-center pr-4 pl-4 p-2 rounded-t-2xl rounded-b-none`}>
+            <div className={`${isDarkTheme ? 'bg-gunmetal border-[#19191c]' : 'bg-antiGunmetal border-[#A7A9AD]'} flex justify-between items-center pr-4 pl-4 p-2 rounded-t-2xl rounded-b-none  border-b-2`}>
                 <h2 className={`${isDarkTheme ? 'text-white' : 'text-[#313338]'} text-xl`}>{title}</h2>
                 <button>
                     <Image src={plus} alt="menu" width={15} height={15} className={`${!isDarkTheme ? 'brightness-0' : ''}`} />
