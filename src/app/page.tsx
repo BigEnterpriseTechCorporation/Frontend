@@ -12,7 +12,8 @@ import question2 from '@/assets/gifs/question-2.gif'
 import question3 from '@/assets/gifs/question-3.gif'
 import organisation from '@/assets/gifs/organisation.png'
 import volunteer from '@/assets/gifs/volunteer.png'
-
+import APanel from '@/components/layout/apanel'
+import apanel from '@/assets/gifs/apanel.gif'
 export default function Home() {
 	return (
 		<main className='bg-[#4B6449] absolute w-full -z-20'>
@@ -122,6 +123,13 @@ export default function Home() {
 					<div></div>
 				</BgImageContainer>
 			</footer>
+			<BgImageContainer
+				image={apanel}
+				className='rounded-none bg-transparent p-5 max-h-[100vh]'
+				imageClassName='rounded-none bg-[none]'
+			>
+				<APanel />
+			</BgImageContainer>
 		</main>
 	)
 }
