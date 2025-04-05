@@ -19,6 +19,8 @@ export default {
 				champagne: '#E8D4B2',
 				limo: '#2E2E34',
 				ai: '#A1A1A1',
+				
+				antiGunmetal: '#D8DBDF',
 			},
 		},
 	},
