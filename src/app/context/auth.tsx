@@ -54,6 +54,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
           return;
         }*/
 
+        if (keycloak.token != null) {
+          localStorage.setItem('token', keycloak.token)
+        } //store token
+
         const client = new ApolloClient({
           cache: cache,
           uri: 'https://rpi.tail707b9c.ts.net/api/graphql',
