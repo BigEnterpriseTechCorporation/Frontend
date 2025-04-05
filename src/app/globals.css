@@ -5,3 +5,19 @@
 /*
 !use only in extreme cases
 */
+
+:root{
+  font-size: min(1.5vw, 24px);
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.auth{
+  background-image: url("../assets/gifs/1567193588_tumblr_p8si9eE6e01st8fc4o1_1280.gif");
+  background-size: contain;
+}
+.ScrollBar::-webkit-scrollbar {
+  display: none;
+}
