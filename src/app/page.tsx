@@ -17,16 +17,18 @@ import people from '@/assets/gifs/apanel.gif'
 import bridge from '@/assets/gifs/Bridge Campsite.gif'
 import Volonters from '@/components/layout/volonters'
 import OrgPanel from '@/components/layout/orgPanel'
+
 export default function Home() {
 	return (
 		<main className='bg-[#4B6449] absolute w-full -z-20'>
 			<header className='pt-10 flex flex-col items-center relative h-screen'>
 				<Navigation />
-				<Image
+				 <Image
+					unoptimized
 					src={logo}
 					alt=''
 					className='pt-8'
-				/>
+				/> 
 				<div>
 					<h1 className='text-[16vh] text-center font-extrabold text-champagne leading-[15vh] tracking-[-0.25rem]'>
 						Together
@@ -42,13 +44,12 @@ export default function Home() {
 				>
 					Участвовать
 				</Link>
-				<Image
-					src={headerBg}
-					alt=''
-					className='absolute -z-10 top-0 w-screen h-screen object-cover'
-				/>
+				<video src="/videos/Home-header.mp4"></video>
 			</header>
-			<section className='flex flex-col items-center py-16' id='goals'>
+			<section
+				className='flex flex-col items-center py-16'
+				id='goals'
+			>
 				<h1 className='text-5xl mb-10'>Цели нашей платформы</h1>
 				<ul className='px-20 w-full flex flex-col gap-8'>
 					<li className='w-full h-[22.5rem] '>
@@ -172,29 +173,6 @@ export default function Home() {
 					</div>
 				</BgImageContainer>
 			</footer>
-			<BgImageContainer
-				image={people}
-				className='rounded-none bg-transparent p-5'
-				imageClassName='rounded-none bg-[none]'
-			>
-				<APanel />
-			</BgImageContainer>
-
-			<BgImageContainer
-				image={bridge}
-				className='rounded-none bg-transparent p-5'
-				imageClassName='rounded-none bg-[none]'
-			>
-				<Volonters />
-			</BgImageContainer>
-
-			<BgImageContainer
-				image={people}
-				className='rounded-none bg-transparent p-5'
-				imageClassName='rounded-none bg-[none]'
-			>
-				<OrgPanel />
-			</BgImageContainer>
 		</main>
 	)
 }
