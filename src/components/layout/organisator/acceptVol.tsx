@@ -30,7 +30,7 @@ export default function CurrentRequest({ requests }: CurrentRequestProps) {
                     >
                         <div className="flex flex-col justify-between items-start mb-2">
                             <div className='flex justify-between items-center w-full'>
-                                <h2 className={`${isDarkTheme ? 'text-white' : 'text-[#313338]'} text-lg font-medium`}>
+                                <h2 className={`${isDarkTheme ? 'text-white' : 'text-[#313338]'} text-lg font-medium max-[680px]:text-2xl`}>
                                     {request.title}
                                 </h2>
                                 <button className="p-2">
@@ -39,16 +39,16 @@ export default function CurrentRequest({ requests }: CurrentRequestProps) {
                                         alt="menu" 
                                         width={6} 
                                         height={6} 
-                                        className={`${!isDarkTheme ? 'brightness-0' : ''}`}
+                                        className={`${!isDarkTheme ? 'brightness-0' : ''} max-[680px]:w-[10px] max-[680px]:h-[10px]`}
                                     />
                                 </button>
                             </div>
                             
-                            <p className={`${isDarkTheme ? 'text-silver' : 'text-[#4E5058]'} text-sm`}>
+                            <p className={`${isDarkTheme ? 'text-silver' : 'text-[#4E5058]'} text-sm max-[680px]:text-xl`}>
                                 {request.description}
                             </p>
                         </div>
-                        <p className={`${isDarkTheme ? 'text-silver' : 'text-[#4E5058]'} text-sm`}>
+                        <p className={`${isDarkTheme ? 'text-silver' : 'text-[#4E5058]'} text-sm max-[680px]:text-xl`}>
                             {request.author}
                         </p>
                     </div>

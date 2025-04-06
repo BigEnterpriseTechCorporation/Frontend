@@ -1,8 +1,5 @@
 import React from "react"
 import Navigation from "./navigation"
-import admin from "@/assets/icons/admin.svg"
-import Image from "next/image"
-import ItemPanel from "./itemPanel"
 import { useTheme } from '@/context/ThemeContext'
 import ItemVolonter from "./itemVolonter"
 import plug from "@/assets/images/plug.png"
@@ -16,7 +13,7 @@ export default function Volonters(){
                 <div className="flex flex-col items-center justify-center p-4">
                     <Navigation />
                 </div>
-                <div className="grid grid-cols-3 p-6 pt-0 gap-4 max-h-[75vh] overflow-y-auto ScrollBar">
+                <div className="grid grid-cols-3 p-6 pt-0 gap-4 max-h-[75vh] overflow-y-auto ScrollBar max-[680px]:grid-cols-2">
                     <ItemVolonter 
                         news={[
                             {

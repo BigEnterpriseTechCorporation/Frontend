@@ -24,7 +24,7 @@ export default function Home() {
 
 	return (
 		<main className='bg-[#4B6449] absolute w-full -z-20'>
-			<header className='pt-10 flex flex-col items-center relative h-screen'>
+			<header className='pt-10 flex flex-col items-center relative h-screen max-[426px]:pt-0'>
 				<Navigation />
 				 <Image
 					unoptimized
@@ -33,7 +33,7 @@ export default function Home() {
 					className='pt-8'
 				/> 
 				<div>
-					<h1 className='text-[16vh] text-center font-extrabold text-champagne leading-[15vh] tracking-[-0.25rem]'>
+					<h1 className='text-[16vh] text-center font-extrabold text-champagne leading-[15vh] tracking-[-0.25rem] max-[680px]:text-[14vh] max-[426px]:text-[10vh]'>
 						Together
 						<br /> We Can
 					</h1>
@@ -60,8 +60,8 @@ export default function Home() {
 							image={question1}
 							className='w-full h-full shadow-[8px_6px_24px_6px_rgba(0,0,0,0.33)]'
 						>
-							<h2 className='text-4xl mb-5'>Что такое доброта?</h2>
-							<p className='text-xl'>Это глобальный конфликт, охвативший весь мир</p>
+							<h2 className='text-4xl mb-5 max-[500px]:text-6xl'>Что такое доброта?</h2>
+							<p className='text-xl max-[500px]:text-3xl'>Это глобальный конфликт, охвативший весь мир</p>
 						</BgImageContainer>
 					</li>
 					<li className='w-full h-[22.5rem] '>
@@ -69,8 +69,8 @@ export default function Home() {
 							image={question2}
 							className='w-full h-full shadow-[8px_6px_24px_6px_rgba(0,0,0,0.33)]'
 						>
-							<h2 className='text-4xl mb-5'>Что такое доброта?</h2>
-							<p className='text-xl'>Это глобальный конфликт, охвативший весь мир</p>
+							<h2 className='text-4xl mb-5 max-[500px]:text-6xl'>Что такое доброта?</h2>
+							<p className='text-xl max-[500px]:text-3xl'>Это глобальный конфликт, охвативший весь мир</p>
 						</BgImageContainer>
 					</li>
 					<li className='w-full h-[22.5rem] '>
@@ -78,8 +78,8 @@ export default function Home() {
 							image={question3}
 							className='w-full h-full shadow-[8px_6px_24px_6px_rgba(0,0,0,0.33)]'
 						>
-							<h2 className='text-4xl mb-5'>Что такое доброта?</h2>
-							<p className='text-xl'>Это глобальный конфликт, охвативший весь мир</p>
+							<h2 className='text-4xl mb-5 max-[500px]:text-6xl'>Что такое доброта?</h2>
+							<p className='text-xl max-[500px]:text-3xl'>Это глобальный конфликт, охвативший весь мир</p>
 						</BgImageContainer>
 					</li>
 				</ul>
@@ -124,16 +124,16 @@ export default function Home() {
 							<div>
 								<h2 className='text-4xl mb-6'>Администрации</h2>
 								<ul className='font-light flex flex-col gap-4'>
-									<li>
+									<li className='max-[680px]:text-2xl'>
 										<Link href={'/'}>Профиль</Link>
 									</li>
-									<li>
+									<li className='max-[680px]:text-2xl'> 
 										<Link href={'/'}>Панель администратора</Link>
 									</li>
-									<li>
+									<li className='max-[680px]:text-2xl'>
 										<Link href={'/'}>Список волонтёров</Link>
 									</li>
-									<li>
+									<li className='max-[680px]:text-2xl'>
 										<Link href={'/'}>Список организаций</Link>
 									</li>
 								</ul>
@@ -141,13 +141,13 @@ export default function Home() {
 							<div>
 								<h2 className='text-4xl mb-6'>Волонтёрам</h2>
 								<ul className='font-light flex flex-col gap-4'>
-									<li>
+									<li className='max-[680px]:text-2xl'>
 										<Link href={'/'}>Профиль</Link>
 									</li>
-									<li>
+									<li className='max-[680px]:text-2xl'>
 										<Link href={'/'}>Мероприятия</Link>
 									</li>
-									<li>
+									<li className='max-[680px]:text-2xl'>
 										<Link href={'/'}>Выписки</Link>
 									</li>
 								</ul>
@@ -155,16 +155,16 @@ export default function Home() {
 							<div>
 								<h2 className='text-4xl mb-6'>Организациям</h2>
 								<ul className='font-light flex flex-col gap-4'>
-									<li>
+									<li className='max-[680px]:text-2xl'>
 										<Link href={'/'}>Профиль</Link>
 									</li>
-									<li>
+									<li className='max-[680px]:text-2xl'>
 										<Link href={'/'}>Мероприятия</Link>
 									</li>
-									<li>
+									<li className='max-[680px]:text-2xl'>
 										<Link href={'/'}>Заявки волонтёров</Link>
 									</li>
-									<li>
+									<li className='max-[680px]:text-2xl'>
 										<Link href={'/'}>Выписки</Link>
 									</li>
 								</ul>
