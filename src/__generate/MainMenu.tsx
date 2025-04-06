@@ -1,49 +1,38 @@
 "use client"
 import React, { FC } from 'react';
 import { Layout, Menu } from 'antd';
-import { BrowserRouter, Link, Route, Routes } from 'react-router';
-
-import { OrganizationAgg, OrganizationAggRouteList } from './Organization/OrganizationAgg'
-import { PersonAgg, PersonAggRouteList } from './Person/PersonAgg'
-import { VolonteerAgg, VolonteerAggRouteList } from './Volonteer/VolonteerAgg'
-import { Home } from '@/Home'
+import Link from 'next/link';
 
 const { Header } = Layout;
 
-
 export const MainMenu: FC = () => {
     return (
-        <BrowserRouter>
-            <Layout>
-                <Header>
-                    <Menu mode='horizontal' >
-
-                        <Menu.Item key='OrganizationAgg'>
-                            <Link to={'/OrganizationAgg'}>OrganizationAgg</Link>
-                        </Menu.Item>
-                        <Menu.Item key='PersonAgg'>
-                            <Link to={'/PersonAgg'}>PersonAgg</Link>
-                        </Menu.Item>
-                        <Menu.Item key='VolonteerAgg'>
-                            <Link to={'/VolonteerAgg'}>VolonteerAgg</Link>
-                        </Menu.Item>
-                    </Menu>
-                </Header>
-                <Routes>
-                    <Route key={"Home"} path="/" element={<Home />}>
-
-                        <Route key={"OrganizationAgg"} path="OrganizationAgg" element={<OrganizationAgg />}>
-                            {OrganizationAggRouteList()}
-                        </Route>
-                        <Route key={"PersonAgg"} path="PersonAgg" element={<PersonAgg />}>
-                            {PersonAggRouteList()}
-                        </Route>
-                        <Route key={"VolonteerAgg"} path="VolonteerAgg" element={<VolonteerAgg />}>
-                            {VolonteerAggRouteList()}
-                        </Route>
-                    </Route>
-                </Routes>
-            </Layout>
-        </BrowserRouter>
-    )
-}
+        <Header style={{ display: 'flex', alignItems: 'center' }}>
+            <div className="logo" style={{ marginRight: '24px' }}>
+                <strong>Volunteer System</strong>
+            </div>
+            <Menu
+                theme="light"
+                mode="horizontal"
+                style={{ flex: 1, minWidth: 0 }}
+                defaultSelectedKeys={['organizations']}
+            >
+                <Menu.Item key="organizations">
+                    <Link href="/organizations">Organizations</Link>
+                </Menu.Item>
+                <Menu.Item key="events">
+                    <Link href="/events">Events</Link>
+                </Menu.Item>
+                <Menu.Item key="persons">
+                    <Link href="/persons">Persons</Link>
+                </Menu.Item>
+                <Menu.Item key="volunteers">
+                    <Link href="/volunteers">Volunteers</Link>
+                </Menu.Item>
+                <Menu.Item key="requests">
+                    <Link href="/volunteer-requests">Volunteer Requests</Link>
+                </Menu.Item>
+            </Menu>
+        </Header>
+    );
+};
