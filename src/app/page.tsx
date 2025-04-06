@@ -35,7 +35,7 @@ export default function Home() {
 					</h3>
 				</div>
 				<Link
-					href={'/'}
+					href={'/dashboard/'}
 					className='text-[#F0ECDC] border-[#F0ECDC] border-[6px] rounded-2xl w-1/2 text-5xl bg-[rgba(50,50,50,0.5)] py-2 absolute bottom-[15vh] text-center'
 				>
 					Участвовать
@@ -137,16 +137,16 @@ export default function Home() {
 								<h2 className='text-4xl mb-6'>Администрации</h2>
 								<ul className='font-light flex flex-col gap-4'>
 									<li>
-										<Link href={'/'}>Профиль</Link>
+										<Link href={'/dashboard'}>Профиль</Link>
 									</li>
 									<li>
 										<Link href={'/panels/admin'}>Панель администратора</Link>
 									</li>
 									<li>
-										<Link href={'/'}>Список волонтёров</Link>
+										<Link href={'/dashboard'}>Список волонтёров</Link>
 									</li>
 									<li>
-										<Link href={'/'}>Список организаций</Link>
+										<Link href={'/dashboard'}>Список организаций</Link>
 									</li>
 								</ul>
 							</div>
