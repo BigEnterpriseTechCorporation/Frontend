@@ -1,11 +1,12 @@
+"use client"
 import React, { FC } from 'react';
 import { Layout, Menu } from 'antd';
 import { BrowserRouter, Link, Route, Routes } from 'react-router';
-import { Home } from '../Home';
 
 import { OrganizationAgg, OrganizationAggRouteList } from './Organization/OrganizationAgg'
 import { PersonAgg, PersonAggRouteList } from './Person/PersonAgg'
 import { VolonteerAgg, VolonteerAggRouteList } from './Volonteer/VolonteerAgg'
+import { Home } from '@/Home'
 
 const { Header } = Layout;
 

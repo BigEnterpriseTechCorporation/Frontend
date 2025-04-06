@@ -3,9 +3,9 @@ import { Button, Space, Spin, Table } from 'antd';
 import { Link, useNavigate, useParams } from 'react-router';
 import { useApolloClient } from '@apollo/client';
 
-import { extractParamName, extractParamValue } from '../../../../basic/Utils';
+import { extractParamName, extractParamValue } from '@/basic/Utils';
 import ErrorModal from '../../../basic/ErrorModal';
-import { useSearchOrganizationQuery } from '../../../../__generate/graphql-frontend'
+import { useSearchOrganizationQuery } from '../../graphql-frontend'
 
 export const OrganizationList: FC<{ selectedOrganization?: string | null, setSelectedOrganization?: (value: string) => void }> = ({ selectedOrganization, setSelectedOrganization }) => {
 

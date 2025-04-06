@@ -1,4 +1,4 @@
-
+"use client"
 import React, { FC, useState } from 'react';
 
 import { DatePicker, Checkbox, Form, Input, Select, Space, Button, Modal  } from 'antd';

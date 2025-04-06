@@ -1,15 +1,15 @@
-
+"use client"
 import React, { FC, useEffect, useState } from 'react';
 
 import { Button, Space, Spin } from 'antd';
 
 import ErrorModal from '../../../basic/ErrorModal';
 
-import { _CreateVolonteerInput, useCreateVolonteerMutation } from '../../../../__generate/graphql-frontend'
+import { _CreateVolonteerInput, useCreateVolonteerMutation } from '../../graphql-frontend'
 import { VolonteerCreateForm } from './VolonteerCreateForm';
 
 import { useNavigate, useParams } from 'react-router'
-import { extractParamName, extractParamValue } from '../../../../basic/Utils';
+import { extractParamName, extractParamValue } from '@/basic/Utils';
 
 export type InputParameters = Partial<_CreateVolonteerInput>
 

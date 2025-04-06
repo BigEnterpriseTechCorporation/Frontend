@@ -1,7 +1,10 @@
 import { AuthProvider } from "./auth";
+import { MainMenu } from '@/__generate/MainMenu'
 
 export default function Context(){
-  return <AuthProvider>
-    Hui
+  return <AuthProvider children={undefined}>
+    {
+
+    }
   </AuthProvider>
 }

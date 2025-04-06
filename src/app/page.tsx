@@ -1,30 +1,22 @@
 'use client'
 
-import Navigation from '@/components/layout/navigation'
-import headerBg from '@/assets/gifs/Home-header.gif'
-import footerBg from '@/assets/gifs/Home-footer.gif'
-import logo from '@/assets/icons/logo.svg'
-import Image from 'next/image'
-import Link from 'next/link'
-import BgImageContainer from '@/components/ui/bgImageContainer'
-import question1 from '@/assets/gifs/question-1.gif'
-import question2 from '@/assets/gifs/question-2.gif'
-import question3 from '@/assets/gifs/question-3.gif'
-import organisation from '@/assets/gifs/organisation.png'
-import volunteer from '@/assets/gifs/volunteer.png'
-
-import { useEffect } from 'react'
-
+//import Navigation from '@/components/layout/navigation'
+//import headerBg from '@/assets/gifs/Home-header.gif'
+//import footerBg from '@/assets/gifs/Home-footer.gif'
+//import logo from '@/assets/icons/logo.svg'
+//import Image from 'next/image'
+//import Link from 'next/link'
+//import BgImageContainer from '@/components/ui/bgImageContainer'
+//import question1 from '@/assets/gifs/question-1.gif'
+//import question2 from '@/assets/gifs/question-2.gif'
+//import question3 from '@/assets/gifs/question-3.gif'
+//import organisation from '@/assets/gifs/organisation.png'
+//import volunteer from '@/assets/gifs/volunteer.png'
 
 export default function Home() {
-	useEffect(() => {
-		localStorage.setItem("theme",localStorage.getItem('theme') ||
-			(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))		
-	}, [])
-
 	return (
 		<main className='bg-[#4B6449] absolute w-full -z-20'>
-			<header className='pt-10 flex flex-col items-center relative h-screen'>
+			{/* <header className='pt-10 flex flex-col items-center relative h-screen'>
 				<Navigation />
 				 <Image
 					unoptimized
@@ -175,7 +167,7 @@ export default function Home() {
 						<h3 className='text-end font-light text-md'>Обезьяны с гранатами</h3>
 					</div>
 				</BgImageContainer>
-			</footer>
+			</footer>*/}
 		</main>
 	)
 }

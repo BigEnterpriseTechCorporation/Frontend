@@ -5,11 +5,11 @@ import { Button, Space, Spin } from 'antd';
 
 import ErrorModal from '../../../basic/ErrorModal';
 
-import { _CreateOrganizationInput, useCreateOrganizationMutation } from '../../../../__generate/graphql-frontend'
+import { _CreateOrganizationInput, useCreateOrganizationMutation } from '../../graphql-frontend'
 import { OrganizationCreateForm } from './OrganizationCreateForm';
 
 import { useNavigate, useParams } from 'react-router'
-import { extractParamName, extractParamValue } from '../../../../basic/Utils';
+import { extractParamName, extractParamValue } from '@/basic/Utils';
 
 export type InputParameters = Partial<_CreateOrganizationInput>
 

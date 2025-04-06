@@ -1,10 +1,10 @@
-
+"use client"
 import React, { FC, useEffect, useState } from 'react';
 
 import { Button, Space, Spin } from 'antd';
 
 import ErrorModal from '../../../basic/ErrorModal';
-import { useDeletePersonMutation } from '../../../../__generate/graphql-frontend'
+import { useDeletePersonMutation } from '../../graphql-frontend'
 import { useNavigate, useParams } from 'react-router'
 
 export const PersonDelete: FC = () => {
