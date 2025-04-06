@@ -6,9 +6,22 @@
 		"dev": "next dev -p 8081",
 		"build": "next build",
 		"start": "next start -p 8081",
-		"lint": "next lint"
+		"lint": "next lint",
+		"diermo-start": "webpack serve --config ./webpack.dev.config.js",
+		"gqlgen": "graphql-codegen --config gqlgen.ts",
+		"codegen": "graphql-codegen --config codegen.ts",
+		"permgen": "graphql-codegen --config permgen.ts",
+		"formgen": "graphql-codegen --config formgen.ts",
+		"allgen": "graphql-codegen --config gqlgen.ts && graphql-codegen --config codegen.ts && graphql-codegen --config formgen.ts",
+		"tsgen:build": "cd tsgen && npm run build",
+		"bundle": "webpack",
+		"get-schema": "get-graphql-schema https://rpi.tail707b9c.ts.net/api/graphql > src/graphql/schema.graphql",
+		"rm-allgen": "del-cli src/__generate/* && del-cli src/graphql/__generate/* && del-cli src/components/__generate/*"
 	},
 	"dependencies": {
+		"@apollo/client": "^3.13.6",
+		"antd": "^5.24.6",
+		"keycloak-js": "^26.1.4",
 		"next": "^15.2.4",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
@@ -23,6 +36,7 @@
 		"@types/react-dom": "^19",
 		"eslint": "^9",
 		"eslint-config-next": "15.1.6",
+		"file-loader": "^6.2.0",
 		"postcss": "^8",
 		"tailwindcss": "^3.4.1",
 		"typescript": "^5"
