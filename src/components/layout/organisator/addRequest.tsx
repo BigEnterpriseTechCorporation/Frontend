@@ -1,17 +1,10 @@
 "use client"
-import React, { useState } from 'react'
+import React from 'react'
 import { useTheme } from '@/context/ThemeContext'
 import Input from '@/components/ui/input'
 
 export default function AddRequest() {
     const { isDarkTheme } = useTheme()
-    const [formData, setFormData] = useState({
-        surname: '',
-        name: '',
-        email: '',
-        title: '',
-        description: ''
-    })
 
     return (
         <div className={`w-[80%] mx-auto rounded-2xl h-full flex flex-col ${isDarkTheme ? 'bg-[#1B1C1F99] text-white' : 'bg-[#F2F3F5] text-[#313338]'}`}>

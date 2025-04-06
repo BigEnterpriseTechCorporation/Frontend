@@ -1,8 +1,6 @@
 import React from "react"
-import { useTheme } from '@/context/ThemeContext'
 import ItemMainOrg from "./itemMainOrg"
 export default function MainOrg(){
-    const { isDarkTheme } = useTheme()
     return(
         <div className="flex flex-row justify-between items-center gap-4 w-full h-full p-4">
             <ItemMainOrg title="Запланировано" organizers={[

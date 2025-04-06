@@ -14,11 +14,11 @@ export default function APanel(){
                 <div className="flex flex-col items-center justify-center p-4">
                     <Navigation />
                     <div className="flex justify-center items-center gap-2 mt-3">
-                        <p className="text-3xl">Панель администратора</p>
-                        <Image src={admin} alt="admin.svg" width={30} height={30} className="ml-2"/>
+                        <p className="text-3xl max-[426px]:text-6xl">Панель администратора</p>
+                        <Image src={admin} alt="admin.svg" width={30} height={30} className="ml-2 max-[680px]:w-[15px]  max-[680px]:h-[15px]"/>
                     </div>
                 </div>
-                <div className="grid grid-cols-3 p-6 pt-0 gap-4 max-h-[70vh]">
+                <div className="grid grid-cols-3 p-6 pt-0 gap-4 max-h-[70vh] max-[680px]:grid-cols-2 max-[680px]:overflow-auto ScrollBar max-[426px]:grid-cols-1">
                     <ItemPanel
                             title="Организаторы"
                             organizers={[

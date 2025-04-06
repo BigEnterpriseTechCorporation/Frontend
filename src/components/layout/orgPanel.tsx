@@ -1,10 +1,6 @@
 import React from "react"
 import Navigation from "./navigation"
-import Image from "next/image"
 import { useTheme } from '@/context/ThemeContext'
-import MainOrg from "./organisator/mainOrg"
-import AddRequest from "./organisator/addRequest"
-import CurrentRequest from "./organisator/currentRequest"
 import AcceptVol from "./organisator/acceptVol"
 
 export default function OrgPanel(){
