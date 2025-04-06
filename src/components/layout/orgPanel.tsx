@@ -1,11 +1,9 @@
 import React from "react"
 import Navigation from "./navigation"
-import admin from "@/assets/icons/admin.svg"
 import Image from "next/image"
-import ItemPanel from "./itemPanel"
 import { useTheme } from '@/context/ThemeContext'
 import MainOrg from "./organisator/mainOrg"
-
+import AddRequest from "./organisator/addRequest"
 
 export default function OrgPanel(){
     const { isDarkTheme } = useTheme()
@@ -20,7 +18,7 @@ export default function OrgPanel(){
                     </div>
                 </div>
                 <div className="max-h-[70vh] h-full">
-                    <MainOrg />
+                    <AddRequest />
                 </div>
             </div>
         </div>
