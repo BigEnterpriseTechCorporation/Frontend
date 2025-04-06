@@ -14,6 +14,8 @@ import organisation from '@/assets/gifs/organisation.png'
 import volunteer from '@/assets/gifs/volunteer.png'
 
 import { useEffect } from 'react'
+
+
 export default function Home() {
 	useEffect(() => {
 		localStorage.setItem("theme",localStorage.getItem('theme') ||
@@ -24,11 +26,12 @@ export default function Home() {
 		<main className='bg-[#4B6449] absolute w-full -z-20'>
 			<header className='pt-10 flex flex-col items-center relative h-screen'>
 				<Navigation />
-				<Image
+				 <Image
+					unoptimized
 					src={logo}
 					alt=''
 					className='pt-8'
-				/>
+				/> 
 				<div>
 					<h1 className='text-[16vh] text-center font-extrabold text-champagne leading-[15vh] tracking-[-0.25rem]'>
 						Together
@@ -44,11 +47,7 @@ export default function Home() {
 				>
 					Участвовать
 				</Link>
-				<Image
-					src={headerBg}
-					alt=''
-					className='absolute -z-10 top-0 w-screen h-screen object-cover'
-				/>
+				<video src="/videos/Home-header.mp4"></video>
 			</header>
 			<section
 				className='flex flex-col items-center py-16'
@@ -177,7 +176,6 @@ export default function Home() {
 					</div>
 				</BgImageContainer>
 			</footer>
-			
 		</main>
 	)
 }
