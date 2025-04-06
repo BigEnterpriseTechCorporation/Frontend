@@ -26,12 +26,12 @@ export default function Home() {
 		<main className='bg-[#4B6449] absolute w-full -z-20'>
 			<header className='pt-10 flex flex-col items-center relative h-screen'>
 				<Navigation />
-				 <Image
+				<Image
 					unoptimized
 					src={logo}
 					alt=''
 					className='pt-8'
-				/> 
+				/>
 				<div>
 					<h1 className='text-[16vh] text-center font-extrabold text-champagne leading-[15vh] tracking-[-0.25rem]'>
 						Together
@@ -47,7 +47,11 @@ export default function Home() {
 				>
 					Участвовать
 				</Link>
-				<video src="/videos/Home-header.mp4"></video>
+				<Image
+					src={headerBg}
+					alt=''
+					className={`absolute top-0 left-0 -z-10 h-full w-full object-cover object-center`}
+				/>
 			</header>
 			<section
 				className='flex flex-col items-center py-16'
@@ -60,8 +64,14 @@ export default function Home() {
 							image={question1}
 							className='w-full h-full shadow-[8px_6px_24px_6px_rgba(0,0,0,0.33)]'
 						>
-							<h2 className='text-4xl mb-5'>Что такое доброта?</h2>
-							<p className='text-xl'>Это глобальный конфликт, охвативший весь мир</p>
+							<h2 className='text-4xl mb-5'>
+								Укрепление доверия через прозрачность и безопасность
+							</h2>
+							<p className='text-xl'>
+								Использовать алгоритмы для рекомендации мероприятий на основе предпочтений
+								пользователя (экология, помощь детям, медицина), а также напоминаний и трекинга
+								личных достижений (часы волонтёрства, пройденные тренинги).
+							</p>
 						</BgImageContainer>
 					</li>
 					<li className='w-full h-[22.5rem] '>
@@ -69,8 +79,12 @@ export default function Home() {
 							image={question2}
 							className='w-full h-full shadow-[8px_6px_24px_6px_rgba(0,0,0,0.33)]'
 						>
-							<h2 className='text-4xl mb-5'>Что такое доброта?</h2>
-							<p className='text-xl'>Это глобальный конфликт, охвативший весь мир</p>
+							<h2 className='text-4xl mb-5'>Стимулировать долгосрочное участие</h2>
+							<p className='text-xl'>
+								Внедрить систему бонусов (сертификаты, партнёрские скидки) и возможность создавать
+								«волонтёрские резюме». Добавить образовательные материалы (вебинары, гайды) для
+								развития навыков и мотивации.
+							</p>
 						</BgImageContainer>
 					</li>
 					<li className='w-full h-[22.5rem] '>
@@ -78,8 +92,13 @@ export default function Home() {
 							image={question3}
 							className='w-full h-full shadow-[8px_6px_24px_6px_rgba(0,0,0,0.33)]'
 						>
-							<h2 className='text-4xl mb-5'>Что такое доброта?</h2>
-							<p className='text-xl'>Это глобальный конфликт, охвативший весь мир</p>
+							<h2 className='text-4xl mb-5'>
+								Создать удобную среду для взаимодействия НКО и волонтёров
+							</h2>
+							<p className='text-xl'>
+								Упростить поиск и коммуникацию между организациями и добровольцами с помощью
+								фильтров (геолокация, интересы, навыки), чатов и системы отзывов.
+							</p>
 						</BgImageContainer>
 					</li>
 				</ul>
@@ -128,7 +147,7 @@ export default function Home() {
 										<Link href={'/'}>Профиль</Link>
 									</li>
 									<li>
-										<Link href={'/'}>Панель администратора</Link>
+										<Link href={'/panels/admin'}>Панель администратора</Link>
 									</li>
 									<li>
 										<Link href={'/'}>Список волонтёров</Link>
@@ -142,7 +161,7 @@ export default function Home() {
 								<h2 className='text-4xl mb-6'>Волонтёрам</h2>
 								<ul className='font-light flex flex-col gap-4'>
 									<li>
-										<Link href={'/'}>Профиль</Link>
+										<Link href={'/volunteer'}>Профиль</Link>
 									</li>
 									<li>
 										<Link href={'/'}>Мероприятия</Link>

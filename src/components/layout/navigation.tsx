@@ -46,7 +46,7 @@ export default function Navigation() {
 				</li>
 				<li>
 					<Link
-						href={'/'}
+						href={'/profile/volunteer'}
 						className='flex gap-1 items-center'
 					>
 						<Image
@@ -79,7 +79,7 @@ export default function Navigation() {
 						className={`h-4 w-4 ${!isDarkTheme ? 'brightness-0' : ''}`}
 					/>
 				</button>
-				<Link href={'/'}>
+				<Link href={'/panels/admin'}>
 					<Image
 						src={role === 'admin' ? shield : notShield}
 						alt=''

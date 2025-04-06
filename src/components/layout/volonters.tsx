@@ -1,8 +1,5 @@
 import React from "react"
 import Navigation from "./navigation"
-import admin from "@/assets/icons/admin.svg"
-import Image from "next/image"
-import ItemPanel from "./itemPanel"
 import { useTheme } from '@/context/ThemeContext'
 import ItemVolonter from "./itemVolonter"
 import plug from "@/assets/images/plug.png"

@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local"
 import { ThemeProvider } from '@/context/ThemeContext'
+import { Providers } from './providers';
 
 const sfPro = localFont({
 	src: [
@@ -49,9 +50,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${sfPro.className} text-white font-medium`}>
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+        <Providers>
+          <ThemeProvider>
+            {children}
+          </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

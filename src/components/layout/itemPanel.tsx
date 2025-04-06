@@ -16,9 +16,24 @@ interface ItemForPanel {
   interface ItemBlock {
     organizers: ItemForPanel[];
     title: string;
+    onApprove?: (id: string) => void;
+    onReject?: (id: string) => void;
   }
-export default function ItemPanel({organizers, title}:ItemBlock){
+export default function ItemPanel({organizers, title, onApprove, onReject}:ItemBlock){
     const { isDarkTheme } = useTheme()
+    
+    const handleApprove = (nickname: string) => {
+        if (onApprove) {
+            onApprove(nickname);
+        }
+    }
+    
+    const handleReject = (nickname: string) => {
+        if (onReject) {
+            onReject(nickname);
+        }
+    }
+    
     return (
         <div className={`${isDarkTheme ? 'bg-[#1B1C1F99]' : 'bg-[#87879975]'}  w-full rounded-2xl`}>
             <div className={`${isDarkTheme ? 'bg-gunmetal border-[#19191c]' : 'bg-antiGunmetal border-[#A7A9AD]'} flex justify-between items-center pr-4 pl-4 p-2 rounded-t-2xl rounded-b-none  border-b-2`}>
@@ -51,12 +66,18 @@ export default function ItemPanel({organizers, title}:ItemBlock){
                                 <span className={`${isDarkTheme ? 'text-white' : 'text-[#313338]'} ml-2`}>@{organizer.nickname}</span>
                             )}
                         </div>
-                        {title === "На согласовании" && (
+                        {title === "На согласовании" && onApprove && onReject && (
                             <div className="flex gap-2">
-                                <button className="p-1 ">
+                                <button 
+                                    className="p-1"
+                                    onClick={() => handleApprove(organizer.nickname)}
+                                >
                                     <Image src={check} alt="approve" width={20} height={20} />
                                 </button>
-                                <button className= "p-1">
+                                <button 
+                                    className= "p-1"
+                                    onClick={() => handleReject(organizer.nickname)}
+                                >
                                     <Image src={cross} alt="reject" width={20} height={20} />
                                 </button>
                             </div>

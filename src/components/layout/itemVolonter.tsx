@@ -1,9 +1,6 @@
 import React from "react"
 import Image, { StaticImageData } from "next/image"
 import menu from "@/assets/icons/menu.svg"
-import plus from "@/assets/icons/plus.svg"
-import check from "@/assets/icons/check.svg"
-import cross from "@/assets/icons/cross.svg"
 import { useTheme } from '@/context/ThemeContext'
 
 interface ItemForVolonter {
