@@ -7,9 +7,9 @@ export default function Support() {
 	
 	return (
 		<div className='flex flex-col items-center h-full'>
-			<h2 className='text-4xl'>Поддержка</h2>
-			<h3 className='text-2xl mb-16'>Ответим на возникшие вопросы</h3>
-			<div className='grid grid-cols-3 grid-rows-[max-content_auto] justify-stretch items-stretch w-full h-full gap-y-4 gap-x-10 mb-12'>
+			<h2 className='text-2xl'>Поддержка</h2>
+			<h3 className='text-md mb-[2.5vh]'>Ответим на возникшие вопросы</h3>
+			<div className='grid grid-cols-3 grid-rows-[max-content_auto] justify-stretch items-stretch w-full h-full gap-y-2 gap-x-10 mb-12'>
 				<label htmlFor=''>
 					<h2>Фамилия</h2>
 					<Input className={`w-full ${isDarkTheme ? 'bg-gunmetal text-white' : 'bg-[#E3E5E8] border-[#D2D5DA] text-[#313338]'}`} />

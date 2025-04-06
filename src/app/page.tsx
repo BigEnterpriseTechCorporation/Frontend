@@ -12,13 +12,16 @@ import question2 from '@/assets/gifs/question-2.gif'
 import question3 from '@/assets/gifs/question-3.gif'
 import organisation from '@/assets/gifs/organisation.png'
 import volunteer from '@/assets/gifs/volunteer.png'
-import APanel from '@/components/layout/apanel'
-import people from '@/assets/gifs/apanel.gif'
-import bridge from '@/assets/gifs/Bridge Campsite.gif'
-import Volonters from '@/components/layout/volonters'
-import OrgPanel from '@/components/layout/orgPanel'
+
+import { useEffect } from 'react'
+
 
 export default function Home() {
+	useEffect(() => {
+		localStorage.setItem("theme",localStorage.getItem('theme') ||
+			(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))		
+	}, [])
+
 	return (
 		<main className='bg-[#4B6449] absolute w-full -z-20'>
 			<header className='pt-10 flex flex-col items-center relative h-screen'>
