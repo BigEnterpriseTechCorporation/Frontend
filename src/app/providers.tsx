@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 'use client'
 
 import React, { ReactNode } from 'react'
@@ -37,3 +38,6 @@ export function Providers({ children }: { children: ReactNode }) {
     </ApolloProvider>
   )
 } 
+=======
+ 
+>>>>>>> 56cb3d0db08ea368295e8dba6ea0a0b81a46f1e5
