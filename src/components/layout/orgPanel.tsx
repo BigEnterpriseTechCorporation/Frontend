@@ -5,6 +5,7 @@ import { useTheme } from '@/context/ThemeContext'
 import MainOrg from "./organisator/mainOrg"
 import AddRequest from "./organisator/addRequest"
 import CurrentRequest from "./organisator/currentRequest"
+import AcceptVol from "./organisator/acceptVol"
 
 export default function OrgPanel(){
     const { isDarkTheme } = useTheme()
@@ -19,7 +20,7 @@ export default function OrgPanel(){
                     </div>
                 </div>
                 <div className="max-h-[70vh] h-full">
-                    <CurrentRequest requests={[
+                    <AcceptVol requests={[
                         {
                             title: 'Событие',
                             description: '(Краткое описание События)',
