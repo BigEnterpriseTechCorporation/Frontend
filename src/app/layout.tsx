@@ -1,8 +1,7 @@
-import { Metadata } from "next";
-import "./globals.css";
-import localFont from "next/font/local"
+import { Metadata } from 'next'
+import './globals.css'
+import localFont from 'next/font/local'
 import { ThemeProvider } from '@/context/ThemeContext'
-import { Providers } from './providers';
 
 const sfPro = localFont({
 	src: [
@@ -36,26 +35,20 @@ const sfPro = localFont({
 
 //? title that will be displayed on page label
 export const metadata: Metadata = {
-  title: "Organizer",
-  //description: "Your slogan here",
-};
+	title: 'Organizer',
+	//description: "Your slogan here",
+}
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode
 }>) {
-
-	
-  return (
-    <html lang="en">
-      <body className={`${sfPro.className} text-white font-medium`}>
-        <Providers>
-          <ThemeProvider>
-            {children}
-          </ThemeProvider>
-        </Providers>
-      </body>
-    </html>
-  );
+	return (
+		<html lang='en'>
+			<body className={`${sfPro.className} text-white font-medium`}>
+				<ThemeProvider>{children}</ThemeProvider>
+			</body>
+		</html>
+	)
 }
