@@ -13,9 +13,10 @@ import question3 from '@/assets/gifs/question-3.gif'
 import organisation from '@/assets/gifs/organisation.png'
 import volunteer from '@/assets/gifs/volunteer.png'
 import APanel from '@/components/layout/apanel'
-import apanel from '@/assets/gifs/apanel.gif'
+import people from '@/assets/gifs/apanel.gif'
 import bridge from '@/assets/gifs/Bridge Campsite.gif'
 import Volonters from '@/components/layout/volonters'
+import OrgPanel from '@/components/layout/orgPanel'
 export default function Home() {
 	return (
 		<main className='bg-[#4B6449] absolute w-full -z-20'>
@@ -172,18 +173,27 @@ export default function Home() {
 				</BgImageContainer>
 			</footer>
 			<BgImageContainer
-				image={apanel}
+				image={people}
 				className='rounded-none bg-transparent p-5'
 				imageClassName='rounded-none bg-[none]'
 			>
 				<APanel />
 			</BgImageContainer>
+
 			<BgImageContainer
 				image={bridge}
 				className='rounded-none bg-transparent p-5'
 				imageClassName='rounded-none bg-[none]'
 			>
 				<Volonters />
+			</BgImageContainer>
+
+			<BgImageContainer
+				image={people}
+				className='rounded-none bg-transparent p-5'
+				imageClassName='rounded-none bg-[none]'
+			>
+				<OrgPanel />
 			</BgImageContainer>
 		</main>
 	)
