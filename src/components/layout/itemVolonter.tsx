@@ -21,14 +21,14 @@ export default function ItemPanel({news, urlImage}:ItemBlock){
     return (
         <div className="">
             {news.map((item, index) => (
-                <div key={index} className="max-w-[350px] mx-auto bg-[#232428] rounded-lg shadow-md mb-4">
+                <div key={index} className={`${isDarkTheme ? 'bg-[#232428]' : 'bg-[#F1F1F1]'} max-w-[350px] mx-auto rounded-lg shadow-md mb-4`}>
                     <Image src={urlImage} alt="image" className="w-full max-h-[200px] rounded-lg rounded-b-none"/>
                     <div className="p-3">
-                        <p className="text-xs text-[#F1F1F1] mb-3">{item.title}</p>
+                        <p className={`${isDarkTheme ? 'text-[#F1F1F1]' : 'text-[#313338]'} text-xs mb-3`}>{item.title}</p>
                         <div className="flex justify-between items-center">
                             <div className="flex gap-2 items-center">
-                                <span className="text-xs text-[#F1F1F1]">{item.nickname}</span>
-                                <span className="text-xs text-[#F1F1F1]">{item.time}</span>
+                                <span className={`${isDarkTheme ? 'text-[#F1F1F1]' : 'text-[#313338]'} text-xs`}>{item.nickname}</span>
+                                <span className={`${isDarkTheme ? 'text-[#F1F1F1]' : 'text-[#313338]'} text-xs`}>{item.time}</span>
                             </div>
                             <div>
                                 <button>
