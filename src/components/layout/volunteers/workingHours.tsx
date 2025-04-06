@@ -1,5 +1,8 @@
+"use client"
+
 import { status } from '@/types'
 import EventCard from '../event'
+import { useTheme } from '@/context/ThemeContext'
 
 interface extendedEvent {
   name: string
@@ -51,17 +54,19 @@ const events: extendedEvent[] = [
 ]
 
 export default function WorkingHours() {
+	const { isDarkTheme } = useTheme()
+	
 	return (
-		<div className=''>
-			<h2 className='text-4xl'>Отработанные часы</h2>
-			<h3 className='text-2xl mb-12'>Тут вы можете узнать сколько часов вы отработали</h3>
-			<div className='bg-nero flex gap-12 justify-center text-2xl py-7 rounded-2xl mb-6'>
+		<div className='text-center overflow-y-hidden max-h-screen h-full'>
+			<h2 className='text-2xl'>Отработанные часы</h2>
+			<h3 className='text-md mb-[2.5vh]'>Тут вы можете узнать сколько часов вы отработали</h3>
+			<div className={`${isDarkTheme ? 'bg-gunmetal text-white' : 'bg-[#E3E5E8] border-[#D2D5DA] text-[#313338]'} flex gap-12 justify-center text-base py-[2vh] rounded-2xl mb-6 w-full`}>
 				<h2>
 					Всего отработано часов: {events.reduce((partialSum, a) => partialSum + a.workingHours, 0)}
 				</h2>
 				<h2>Всего участий в событиях: {events.length} </h2>
 			</div>
-			<div className='flex flex-col px-12 gap-10 overflow-y-scroll no-scrollbar'>
+			<div className='flex flex-col px-12 gap-[3vh] h-full overflow-y-scroll scrollbar'>
 				{events.map((event, index) => {
 					return (
 						<EventCard

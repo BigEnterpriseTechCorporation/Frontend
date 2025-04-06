@@ -26,19 +26,19 @@ export default function EventCard({name,creationDate,status,description,creatorL
 				} flex justify-between ${isDarkTheme ? 'bg-gunmetal' : 'bg-[#D8DBDF]'} py-7 px-4 rounded-t-2xl`}
 			>
 				<div className='flex items-center'>
-					<h1 className={`mr-5 ${isDarkTheme ? 'text-white' : 'text-[#313338]'}`}>{name}</h1>
+					<h1 className={`mr-5 text-xs ${isDarkTheme ? 'text-white' : 'text-[#313338]'}`}>{name}</h1>
 					<h2 className={isDarkTheme ? 'text-white' : 'text-[#313338]'}>{creationDate}</h2>
 				</div>
 				<div className='flex items-center'>
 					<Status status={status} />
 					<button
-						className={`${!isExpanded ? 'rotate-180' : 'rotate-0'} ml-20 duration-300 ease-in-out`}
+						className={`${!isExpanded ? 'rotate-180' : 'rotate-0'} ml-3 duration-300 ease-in-out`}
 						onClick={() => toggleExpansion((prev) => !prev)}
 					>
 						<Image
 							src={arrowUp}
 							alt=''
-							className={!isDarkTheme ? 'brightness-0' : ''}
+							className={`${!isDarkTheme ? 'brightness-0' : ''} h-4 w-4`}
 						/>
 					</button>
 				</div>

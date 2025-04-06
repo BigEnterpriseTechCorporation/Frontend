@@ -105,7 +105,7 @@ export default function Events() {
 					className={`${isDarkTheme ? 'bg-gunmetal' : 'bg-[#D8DBDF]'} px-1`}
 				/>{' '}
 			</h4>
-			<div className='flex flex-col px-12 gap-10 overflow-y-scroll scrollbar h-full'>
+			<div className='flex flex-col px-12 gap-[3vh] overflow-y-scroll scrollbar h-full'>
 				{events.map((event, index) => {
 					return (
 						<EventCard

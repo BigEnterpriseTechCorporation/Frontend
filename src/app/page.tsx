@@ -12,9 +12,14 @@ import question2 from '@/assets/gifs/question-2.gif'
 import question3 from '@/assets/gifs/question-3.gif'
 import organisation from '@/assets/gifs/organisation.png'
 import volunteer from '@/assets/gifs/volunteer.png'
-import APanel from '@/components/layout/apanel'
-import apanel from '@/assets/gifs/apanel.gif'
+
+import { useEffect } from 'react'
 export default function Home() {
+	useEffect(() => {
+		localStorage.setItem("theme",localStorage.getItem('theme') ||
+			(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))		
+	}, [])
+
 	return (
 		<main className='bg-[#4B6449] absolute w-full -z-20'>
 			<header className='pt-10 flex flex-col items-center relative h-screen'>
@@ -45,7 +50,10 @@ export default function Home() {
 					className='absolute -z-10 top-0 w-screen h-screen object-cover'
 				/>
 			</header>
-			<section className='flex flex-col items-center py-16' id='goals'>
+			<section
+				className='flex flex-col items-center py-16'
+				id='goals'
+			>
 				<h1 className='text-5xl mb-10'>Цели нашей платформы</h1>
 				<ul className='px-20 w-full flex flex-col gap-8'>
 					<li className='w-full h-[22.5rem] '>
@@ -169,13 +177,7 @@ export default function Home() {
 					</div>
 				</BgImageContainer>
 			</footer>
-			<BgImageContainer
-				image={apanel}
-				className='rounded-none bg-transparent p-5'
-				imageClassName='rounded-none bg-[none]'
-			>
-				<APanel />
-			</BgImageContainer>
+			
 		</main>
 	)
 }

@@ -21,7 +21,7 @@ export default function Navigation() {
 	}, [])
 
 	return (
-		<nav className={`${isDarkTheme ? 'bg-gunmetal border-[#1D1D1D]' : 'bg-antiGunmetal border-[#D8DBDF]'} rounded-3xl flex items-center gap-12 py-2 px-4 w-max border `}>
+		<nav className={`${isDarkTheme ? 'bg-gunmetal border-[#1D1D1D]' : 'bg-antiGunmetal border-[#D8DBDF]'} rounded-3xl flex items-center gap-12 py-2 px-4 w-max border self-center justify-self-center`}>
 			<Link href={`${role === '' ? '/auth' : '/profile/' + role}`}>
 				<Image
 					src={profile}

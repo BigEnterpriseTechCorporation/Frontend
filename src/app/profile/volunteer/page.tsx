@@ -37,16 +37,16 @@ export default function Volunteer() {
 
 	return (
 		<main className='h-screen w-screen p-7 max-h-screen '>
-			<div className={`${isDarkTheme ? 'bg-[rgba(67,67,67,.46)] border-sand' : 'bg-[rgba(107,107,107,.46)] border-[#D8DBDF]'} w-full h-full rounded-3xl border-4 pt-8 px-[6.25rem] pb-[6.25rem] gap-12 flex flex-col items-center justify-between`}>
+			<div className={`${isDarkTheme ? 'bg-[rgba(67,67,67,.46)] border-sand' : 'bg-[rgba(107,107,107,.46)] border-[#D8DBDF]'} w-full h-full rounded-3xl border-4 pt-8 px-[6.25rem] pb-[7vh] gap-12 grid grid-rows-[min-content_auto] justify-center`}>
 				<Navigation />
-				<div className='grid grid-cols-8 items-stretch w-full h-full'>
-					<div className={`col-span-2 ${isDarkTheme ? 'bg-limo' : 'bg-[#D8DBDF]'} rounded-l-3xl px-5 py-9`}>
+				<div className='grid grid-cols-8 items-stretch w-full self-stretch overflow-x-hidden'>
+					<div className={`col-span-2 ${isDarkTheme ? 'bg-limo' : 'bg-[#D8DBDF]'} rounded-l-3xl px-5 py-[4vh] flex flex-col items-center w-full`}>
 						<Image
 							src={a}
 							alt=''
-							className='rounded-full mb-4'
+							className='rounded-full mb-[1vh] h-[15vh] w-[15vh]'
 						/>
-						<h2 className={`text-4xl mb-10 text-center ${isDarkTheme ? 'text-white' : 'text-[#313338]'}`}>Имя Фамилия</h2>
+						<h2 className={`text-4xl mb-[0.5dvh] text-center ${isDarkTheme ? 'text-white' : 'text-[#313338]'}`}>Имя Фамилия</h2>
 						<ul>
 							{options.map((option) => {
 								const isSelected = choosedTab === option;
@@ -61,10 +61,10 @@ export default function Volunteer() {
 												: isDarkTheme
 													? 'hover:text-white hover:bg-sand'
 													: 'text-[#2E2E2E] hover:text-[#007AFF] hover:bg-[#007AFF25]'
-										} py-5 hover: text-center duration-300 ease-in-out rounded-md`}
+										} py-[0.25vh] hover: text-center duration-300 ease-in-out rounded-md w-full`}
 									>
 										<button
-											className='flex items-center justify-center gap-12 text-center w-full'
+											className='text-center w-full'
 											onClick={() => setChoosedTab(option)}
 										>
 											<h3>{option}</h3>
@@ -74,7 +74,7 @@ export default function Volunteer() {
 							})}
 						</ul>
 					</div>
-					<div className={`col-span-6 ${isDarkTheme ? 'bg-[rgba(46,46,52,.61)]' : 'bg-[rgba(107,107,107,.61)]'} rounded-r-3xl max-h-full !overflow-y-hidden px-12 pt-8 pb-16`}>
+					<div className={`col-span-6 ${isDarkTheme ? 'bg-[rgba(46,46,52,.61)]' : 'bg-[rgba(107,107,107,.61)]'} rounded-r-3xl !overflow-y-hidden px-12 pt-8 pb-[4vh]`}>
 						{<Tab />}
 					</div>
 				</div>
